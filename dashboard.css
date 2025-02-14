@@ -1,0 +1,95 @@
+/* GENERAL STYLES */
+body {
+    font-family: Arial, sans-serif;
+    background: url("side_design.png") no-repeat center center fixed;
+    background-size: cover;
+    text-align: center;
+    padding-top: 80px; /* Prevents content from hiding under fixed navbar */
+}
+
+/* HEADER & NAVIGATION */
+header {
+    width: 100%;
+    background-color: #ECEEF3CC; /* White background */
+    border-bottom: 0px solid #ECEEF3CC; /* Blue bottom border */
+    border-bottom-right-radius: 7rem;
+    border-bottom-left-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensures navbar stays above everything */
+}
+
+/* LOGO (Leftmost) */
+.logo {
+    height: 50px; /* Adjust size as needed */
+    width: auto;
+}
+
+/* NAVBAR (Rightmost) */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0 50px 0 0; /* Ensures the nav buttons are aligned to the right */
+}
+
+.navbar ul li {
+    display: inline;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #4D5F87;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    background-color: #3869D3;
+    color: #ECEEF3CC;
+}
+
+/* DASHBOARD HEADER */
+h1 {
+    color: #3869D3;
+    margin-bottom: 20px;
+}
+
+/* ADMIN CONTAINER */
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ADMIN CARD STYLING */
+.admin-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 350px;
+    text-align: left;
+    border: 4px solid #3869D3;
+}
+
+.admin-card h2 {
+    color: #3869D3;
+    margin-bottom: 10px;
+}
+
+.admin-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}

@@ -8,7 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailOrUsername = $_POST['email'];
     $password = $_POST['password'];
 
-    // Check if user exists (email OR username)
     $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE username = ? OR email = ?");
     $stmt->bind_param("ss", $emailOrUsername, $emailOrUsername);
     $stmt->execute();
@@ -17,19 +16,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
-        // **No password hashing, compare as plain text**
-        if ($password === $user['password']) {
-            $_SESSION['admin_id'] = $user['id']; // Store admin ID in session
+        if ($password === $user['password']) { // No hashing
+            $_SESSION['admin_id'] = $user['id']; // Store admin ID
             $_SESSION['admin_username'] = $user['username']; // Store username
+
             header("Location: index.php"); // Redirect to dashboard
             exit();
         } else {
-            $error_message = "Invalid password.";
+            $error = "Invalid password."; // Error message
         }
     } else {
-        $error_message = "User not found.";
+        $error = "User not found."; // Error message
     }
-    $stmt->close();
 }
 ?>
 
