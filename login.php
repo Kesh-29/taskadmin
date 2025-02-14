@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
     <div class="logo">
-        <img src="task_connect.png" alt="Task Connect Logo">
+        <img src="elements\login_logo.png" alt="Task Connect Logo">
     </div>
 
     <div class="login-container">
