@@ -23,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: index.php"); // Redirect to dashboard
             exit();
         } else {
-            $error = "Invalid password."; // Error message
+            $error_message = "Invalid password."; // Error message
         }
     } else {
-        $error = "User not found."; // Error message
+        $error_message = "User not found."; // Error message
     }
 }
 ?>

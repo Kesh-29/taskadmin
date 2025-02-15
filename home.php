@@ -27,7 +27,6 @@ $admin = $result->fetch_assoc();
     <title>Task Connect - Home</title>
     <link rel="stylesheet" href="home.css">
 
-    <!-- Prevent Back Navigation After Logout -->
     <script>
         if (window.history.replaceState) {
             window.history.replaceState(null, null, window.location.href);
@@ -37,7 +36,7 @@ $admin = $result->fetch_assoc();
 
 <body>
     <header class="navbar">
-        <img src="Main_Logo.png" alt="Task Connect Logo" class="logo">
+        <img src="elements\mini_Logo.png" alt="Task Connect Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="home.php">Home</a></li>
@@ -54,8 +53,17 @@ $admin = $result->fetch_assoc();
             <p>Connecting People Together</p>
         </div>
         <section class="content">
-            <p>The gig economy has become a vital source of income for many Filipinos...</p>
-            <p>Task Connect is poised to revolutionize short-term work connections...</p>
+            <p>The gig economy has become a vital source of income for many Filipinos, offering flexibility and
+                opportunities to earn through short-term jobs or "mini jobs."
+                Despite this, many individuals and businesses struggle to connectwith reliable workers for small tasks.
+                This proposal introduces Task Connect, a mobile app
+                designed to bridge this gap by connecting job seekers and employers efficiently.</p>
+            <p>Task Connect is poised to revolutionize the way people in the Philippines find and offer short-term work.
+                By offering a flexible, mobile-based platform that simplifies job matching, Task Connect will provide
+                job seekers with new income opportunities while helping employers
+                find reliable, on-demand assistance for their tasks. This project has the potential to enhance economic
+                mobility and improve the livelihoods of thousands of Filipinos
+                across the country.</p>
         </section>
     </main>
 </body>
