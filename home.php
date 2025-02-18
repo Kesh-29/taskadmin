@@ -1,21 +1,5 @@
 <?php
-session_start();
-include 'db_connection.php';
-
-// Check if admin is logged in
-if (!isset($_SESSION['admin_id'])) {
-    header("Location: login.php");
-    exit();
-}
-
-// Fetch admin details (if needed)
-$admin_id = $_SESSION['admin_id'];
-$sql = "SELECT first_name, last_name, email FROM admins WHERE id = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("i", $admin_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$admin = $result->fetch_assoc();
+session_start(); // Start session to track login status
 ?>
 
 <!DOCTYPE html>
@@ -40,16 +24,22 @@ $admin = $result->fetch_assoc();
         <nav>
             <ul>
                 <li><a href="home.php">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="index.php">Dashboard</a></li>
-                <li><a href="logout.php">Logout</a></li>
+                <?php if (isset($_SESSION['admin_id'])): ?>
+                    <!-- If logged in, show Logout -->
+                    <li><a href="logout.php">Logout</a></li>
+                <?php else: ?>
+                    <!-- If not logged in, show Login -->
+                    <li><a href="login.php">Login</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
     </header>
 
     <main>
         <div class="hero">
-            <h1>Welcome, <?= htmlspecialchars($admin['first_name']) ?>!</h1>
+            <h1>Welcome to TaskConnect!</h1>
             <p>Connecting People Together</p>
         </div>
         <section class="content">

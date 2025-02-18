@@ -7,6 +7,52 @@ body {
     height: 100vh;
     background: url("side_design.png") no-repeat center center fixed;
     background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.7); /* Reduced opacity */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.nav_logo {
+    height: 50px;
+}
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0 50px 0 0;
+}
+nav ul li {
+    display: inline;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #4D5F87;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3 ease;
+    
+}
+nav ul li a:hover {
+    background-color: #3869D3;
+    color: #ECEEF3CC;
 }
 
 .logo {

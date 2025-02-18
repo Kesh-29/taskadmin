@@ -1,64 +1,55 @@
 /* GENERAL STYLES */
 body {
     font-family: Arial, sans-serif;
-    background: url("side_design.png") no-repeat center center fixed;
-    background-size: cover;
     text-align: center;
     padding-top: 80px; /* Prevents content from hiding under fixed navbar */
 }
 
 /* HEADER & NAVIGATION */
-header {
-    width: 100%;
-    background-color: #ECEEF3CC; /* White background */
-    border-bottom: 0px solid #ECEEF3CC; /* Blue bottom border */
-    border-bottom-right-radius: 7rem;
-    border-bottom-left-radius: 2rem;
+.navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 15px 30px;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.7); /* Reduced opacity */
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 1000; /* Ensures navbar stays above everything */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-/* LOGO (Leftmost) */
 .logo {
-    height: 50px; /* Adjust size as needed */
-    width: auto;
+    height: 50px;
 }
-
-/* NAVBAR (Rightmost) */
-.navbar ul {
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
     padding: 0;
-    margin: 0 50px 0 0; /* Ensures the nav buttons are aligned to the right */
+    margin: 0 50px 0 0;
 }
-
-.navbar ul li {
+nav ul li {
     display: inline;
 }
-
-.navbar ul li a {
+nav ul li a {
     text-decoration: none;
     color: #4D5F87;
-    font-size: 18px;
     font-weight: bold;
+    font-size: 18px;
     padding: 10px 15px;
     border-radius: 5px;
-    transition: 0.3s ease;
+    transition: 0.3 ease;
+    
 }
-
-.navbar ul li a:hover {
+nav ul li a:hover {
     background-color: #3869D3;
     color: #ECEEF3CC;
 }
-
 /* DASHBOARD HEADER */
 h1 {
     color: #3869D3;
@@ -93,10 +84,3 @@ h1 {
     margin: 5px 0;
     font-size: 16px;
 }
-
-.error {
-    color: red;
-    font-size: 14px;
-    margin-top: 10px;
-    text-align: center;
-    }

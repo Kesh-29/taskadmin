@@ -23,14 +23,14 @@ $result = $conn->query($sql);
 
 <body>
 
-    <header>
-        <img src="elements\mini_logo.png" alt="Task Connect Logo" class="logo">
-        <nav class="navbar">
+    <header class="navbar">
+        <img src="elements\mini_Logo.png" alt="Task Connect Logo" class="logo">
+        <nav>
             <ul>
                 <li><a href="home.php">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="index.php">Dashboard</a></li>
-                <li><a href="logout.php">Logout</a></li> <!-- Functional logout -->
+                <li><a href="logout.php">Logout</a></li>
             </ul>
         </nav>
     </header>

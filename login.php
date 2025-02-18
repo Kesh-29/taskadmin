@@ -43,6 +43,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
+    <header class="navbar">
+        <img src="elements\mini_Logo.png" alt="Task Connect Logo" class="nav_logo">
+        <nav>
+            <ul>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="index.php">Dashboard</a></li>
+                <li><a href="login.php">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="logo">
         <img src="elements\login_logo.png" alt="Task Connect Logo">
     </div>
