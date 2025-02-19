@@ -10,15 +10,12 @@ session_start(); // Start session to track login status
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Connect - Home</title>
     <link rel="stylesheet" href="home.css">
-
-    <script>
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
-        }
-    </script>
+    <link href="https://fonts.cdnfonts.com/css/made-tommy-outline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <header class="navbar">
         <img src="elements\mini_Logo.png" alt="Task Connect Logo" class="logo">
         <nav>
@@ -38,23 +35,34 @@ session_start(); // Start session to track login status
     </header>
 
     <main>
+
         <div class="hero">
+            <img src="elements\BroadcastPin.png" alt="" class="brodpin">
+            <img src="elements\ChatLeftDots.png" alt="" class="chatpin">
+            <img src="elements\Rssfill.png" alt="" class="rsspin">
+            <img src="elements\Tools.png" alt="" class="toolpin">
             <h1>Welcome to TaskConnect!</h1>
             <p>Connecting People Together</p>
         </div>
+
         <section class="content">
             <p>The gig economy has become a vital source of income for many Filipinos, offering flexibility and
                 opportunities to earn through short-term jobs or "mini jobs."
-                Despite this, many individuals and businesses struggle to connectwith reliable workers for small tasks.
+                Despite this, many individuals and businesses struggle to connectwith reliable workers for small
+                tasks.
                 This proposal introduces Task Connect, a mobile app
-                designed to bridge this gap by connecting job seekers and employers efficiently.</p>
-            <p>Task Connect is poised to revolutionize the way people in the Philippines find and offer short-term work.
-                By offering a flexible, mobile-based platform that simplifies job matching, Task Connect will provide
+                designed to bridge this gap by connecting job seekers and employers efficiently.</p><br>
+            <p>Task Connect is poised to revolutionize the way people in the Philippines find and offer short-term
+                work.
+                By offering a flexible, mobile-based platform that simplifies job matching, Task Connect will
+                provide
                 job seekers with new income opportunities while helping employers
-                find reliable, on-demand assistance for their tasks. This project has the potential to enhance economic
+                find reliable, on-demand assistance for their tasks. This project has the potential to enhance
+                economic
                 mobility and improve the livelihoods of thousands of Filipinos
                 across the country.</p>
         </section>
+
     </main>
 </body>
 

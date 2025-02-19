@@ -10,6 +10,8 @@ session_start(); // Start session to track login status
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Connect</title>
     <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.cdnfonts.com/css/made-tommy-outline" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -39,49 +41,52 @@ session_start(); // Start session to track login status
             Founded in 2025, Task Connect is more than just a job-seeking platform—it's a bridge between talent and
             opportunity, whether online or in person. Our mission is to empower job seekers and employers by making the
             hiring process seamless, efficient, and accessible to everyone.
-        </p>
+        </p> <br>
         <p>
             Task Connect was born from a simple idea: Finding a job shouldn't be complicated. Whether you're searching
             for remote gigs, freelance projects, or in-person roles, we provide the tools and connections you need to
             take control of your career. No more endless job searches or missed opportunities, Task Connect puts you in
             charge of your professional journey.
-        </p>
+        </p><br>
         <p>
             At Task Connect, we believe in redefining job-seeking by offering smart matching, real-time updates, and
             secure communication. Our goal is to make finding work easier, faster, and more effective for everyone.
-        </p>
+        </p><br>
         <p>
             Take the next step in your career with Task Connect, where opportunities meet talent.
         </p>
+        <img src="elements\Setting.png" alt="">
     </section>
 
     <div class="container">
-        <div class="title">The <span style="font-weight: normal;">Developers</span></div>
+        <div class="title"><span>The</span> Developers</span></div>
         <div class="developer">
             <div class="developer_kresner">
-                <p class="name">Kresner Leonardo</p>
-                <p>Project Manager</p>
-                <p> Android Developer, and UI Designer, and Professional Mayabang</p>
+                <img src="elements\kresner_photo.png" alt="">
+                <p class="name"><span>Kresner</span> Leonardo</p>
+                <p class="position">Project Manager</p>
+                <p class="position"> Android Developer, and UI Designer, and Professional Mayabang</p>
             </div>
 
             <div class="developer_venus">
-                <p class="name">Venus Sison</p>
-                <p>Android Developer</p>
+                <p class="name"><span>Venus</span> Sison</p>
+                <p class="position">Android Developer</p>
             </div>
 
             <div class="developer_patrick">
-                <p class="name">Patrick Cruz</p>
-                <p>Backend Developer</p>
+                <img src="elements\patrick_photo.png" alt="">
+                <p class="name"><span>Patrick</span> Cruz</p>
+                <p class="position">Backend Developer</p>
             </div>
 
             <div class="developer_brent">
-                <p class="name">Brent Espinoza</p>
-                <p>Web Developer</p>
+                <p class="name"><span>Brent</span> Espinoza</p>
+                <p class="position">Web Developer</p>
             </div>
 
             <div class="developer_brian">
-                <p class="name"> Prince Brian Layno</p>
-                <p>Web Developer</p>
+                <p class="name"><span>Brian</span> Layno</p>
+                <p class="position">Web Developer</p>
             </div>
         </div>
     </div>
