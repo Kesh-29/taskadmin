@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title></title>
     <link rel="stylesheet" href="dashboard.css">
     <link href="https://fonts.cdnfonts.com/css/made-tommy-outline" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -37,7 +37,6 @@ $result = $conn->query($sql);
         </nav>
     </header>
 
-    <h1 class="title">ADMIN DASHBOARD</h1>
 
     <div class="admin-container">
         <?php while ($admin = $result->fetch_assoc()): ?>

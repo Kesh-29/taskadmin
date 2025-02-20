@@ -1,54 +1,55 @@
 @import url('https://fonts.cdnfonts.com/css/made-tommy-outline');
 body {
-    font-family: Arial, sans-serif;
-    padding-top: 80px; /* Prevents content from hiding under fixed navbar */
+    font-family: 'MADE TOMMY', sans-serif;
+    background: url("TEST/side_background.png") no-repeat center center fixed;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background-color: rgba(255, 255, 255, 0.7); /* Reduced opacity */
-    width: 100%;
-    position: fixed;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally */
+    position: fixed; /* Keeps it fixed on scroll */
     top: 0;
     left: 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
+    width: 1px; /* Adjust width as needed */
+    height: 100vh; /* Full height of the viewport */
+    background-color: #4D5F87; /* Navbar background color */
+    padding: 20px 0;
 }
 .logo {
-    height: 50px;
+    width: 200px; /* Adjust logo size */
+    margin-bottom: 20px;
 }
 nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
+    width: 100%;
 }
 nav ul {
     list-style: none;
-    display: flex;
-    gap: 20px;
     padding: 0;
-    margin: 0 50px 0 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
 }
 nav ul li {
-    display: inline;
+    width: 100%;
 }
 nav ul li a {
     font-family: 'MADE TOMMY', sans-serif;
+    display: block; /* Makes links fill the width */
+    width: 100%;
+    padding: 15px;
+    text-align: center;
     text-decoration: none;
-    color: #4D5F87;
-    font-weight: 400;
+    color: #FFFFFF;
+    font-weight: 500;
     font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: 0.3 ease;
-    margin-right: 40px;
-    
+    margin-left: 10px;
+    transition: 0.3s ease;
 }
 nav ul li a:hover {
-    background-color: #3869D3;
+    background-color: #002233;
     color: #ECEEF3CC;
 }
 /* DASHBOARD HEADER */
@@ -61,10 +62,6 @@ h1 {
 }
 
 /* ADMIN CONTAINER */
-
-.title {
-    margin-left: 80px;
-}
 .admin-container {
     display: flex;
     flex-wrap: wrap; /* Allows items to wrap to the next row */
@@ -72,22 +69,23 @@ h1 {
     justify-content: flex-start; /* Aligns items from the left */
     padding: 20px;
     margin-left: 80px;
-    max-width: 1200px; /* Adjust based on your layout */
+    max-width: 1450px; /* Adjust based on your layout */
 }
 
 /* ADMIN CARD STYLING */
 .admin-card {
     font-family: 'MADE TOMMY', sans-serif;
     font-weight: 400;
-    background: #D3D3D3;
+    background: #FFFFFF;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    width: 350px;
+    width: 400px;
     text-align: left;
     border: 2px solid #4D5F87;
     width: calc(25% - 20px);
     min-width: 250px;
+    margin-left: 80px;
 }
 
 .admin-image {
@@ -98,9 +96,6 @@ h1 {
     top: 53px;
     right: 10px;
     margin-top: -50px;
-}
-
-.admin-card img {
     margin-left: 20px;
 }
 
