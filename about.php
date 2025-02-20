@@ -59,7 +59,7 @@ session_start(); // Start session to track login status
     </section>
 
     <div class="container">
-        <div class="title"><span>The</span> Developers</span></div>
+        <div class="title"><span>The</span> Developers</div>
         <div class="developer">
             <div class="developer_kresner">
                 <img src="elements\kresner_photo.png" alt="">
@@ -85,6 +85,7 @@ session_start(); // Start session to track login status
             </div>
 
             <div class="developer_brian">
+                <img src="elements\brian_photo.png" alt="">
                 <p class="name"><span>Brian</span> Layno</p>
                 <p class="position">Web Developer</p>
             </div>
