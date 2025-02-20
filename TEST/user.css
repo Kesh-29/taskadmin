@@ -1,0 +1,128 @@
+        body {
+            display: flex;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('Side Background.png') no-repeat left center/cover, #0E2A3B;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+        }
+        .logo-container {
+            width: 100%;
+            text-align: left;
+            padding: 30px;
+            padding-left: -5px;
+        }
+        .logo {
+            width: 250px;
+
+        }
+        .main-container {
+            display: flex;
+            flex: 1;
+        }
+        .sidebar {
+            width: 180px;
+            padding: 40px;
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            margin-top: 5px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 10px;
+            width: 100%;
+        }
+        nav ul li {
+            margin: 60px 0;
+            width: 100%;
+        }
+        nav ul li a {
+            display: block;
+            text-decoration: none;
+            color: white;
+            font-weight: 700;
+            background: #0066FF;
+            padding: 20px;
+            text-align: right;
+            border-radius: 27px;
+            width: 100%;
+            border: 2px solid #000000;
+            Margin-left: -80px
+        }
+        nav ul li a:hover {
+            background: #004bb5;
+        }
+        .content {
+            margin-left: 300px;
+            padding: 20px;
+            width: calc(100% - 270px);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: auto;
+        }
+        .content-container {
+            
+            background: white;
+            color: black;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 95%; 
+            max-width: 100%; 
+            margin-top: -110px; 
+            margin-bottom: 10px; 
+            min-height: 88vh; 
+
+
+        }
+        h2 {
+            font-weight: bold;
+            text-align: left;
+            
+        }
+            
+       
+        table {
+            width: 100%;
+            border-collapse: separate; 
+            border-spacing: 0 40px; 
+            background: white;
+            color: black;
+            border-radius: 10px;
+        }
+
+       
+        th {
+            color: black;
+            padding: 10px;
+            text-align: left;
+            font-weight: 500;
+        }
+
+       
+        tr {
+            background: white;
+            border-color: #000000;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        
+        td {
+            padding: 15px;
+            text-align: left;
+            position: relative;
+        }
+
+       
+        tbody tr:hover {
+            background: #f1f1f1;
+            transition: 0.2s ease-in-out;
+        }
