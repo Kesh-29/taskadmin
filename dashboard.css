@@ -2,55 +2,63 @@
 body {
     font-family: 'MADE TOMMY', sans-serif;
     background: url("TEST/side_background.png") no-repeat center center fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
 }
 
-.navbar {
-    display: flex;
-    flex-direction: column; /* Stacks items vertically */
-    align-items: center; /* Centers items horizontally */
-    position: fixed; /* Keeps it fixed on scroll */
-    top: 0;
-    left: 0;
-    width: 1px; /* Adjust width as needed */
-    height: 100vh; /* Full height of the viewport */
-    background-color: #4D5F87; /* Navbar background color */
-    padding: 20px 0;
+.logo-container {
+    width: 100%;
+    text-align: left;
+    padding: 30px;
+    padding-left: -5px;
 }
 .logo {
-    width: 200px; /* Adjust logo size */
-    margin-bottom: 20px;
+    width: 250px;
+    position: fixed;
+
 }
-nav {
-    width: 100%;
+.main-container {
+    display: flex;
+    flex: 1;
+}
+.sidebar {
+    width: 180px;
+    padding: 40px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 5px;
 }
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding: 10px;
     width: 100%;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items */
 }
 nav ul li {
+    margin: 60px 0;
     width: 100%;
 }
 nav ul li a {
-    font-family: 'MADE TOMMY', sans-serif;
-    display: block; /* Makes links fill the width */
-    width: 100%;
-    padding: 15px;
-    text-align: center;
+    display: block;
     text-decoration: none;
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 18px;
-    margin-left: 10px;
-    transition: 0.3s ease;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 20px;
+    text-align: right;
+    border-radius: 27px;
+    width: 100%;
+    border: 2px solid #000000;
+    Margin-left: -80px
 }
 nav ul li a:hover {
-    background-color: #002233;
-    color: #ECEEF3CC;
+    background: #004bb5;
 }
 /* DASHBOARD HEADER */
 h1 {
@@ -68,8 +76,10 @@ h1 {
     gap: 20px; /* Spacing between cards */
     justify-content: flex-start; /* Aligns items from the left */
     padding: 20px;
-    margin-left: 80px;
-    max-width: 1450px; /* Adjust based on your layout */
+    margin-left: 50px;
+    position: relative;
+    left: 150px;
+    max-width: 1300px; /* Adjust based on your layout */
 }
 
 /* ADMIN CARD STYLING */
@@ -85,7 +95,7 @@ h1 {
     border: 2px solid #4D5F87;
     width: calc(25% - 20px);
     min-width: 250px;
-    margin-left: 80px;
+    margin-left: 10px;
 }
 
 .admin-image {
@@ -125,4 +135,3 @@ h1 {
     line-height: 20px;
     margin-left: 20px;
 }
-
