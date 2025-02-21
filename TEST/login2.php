@@ -1,9 +1,43 @@
+<?php
+session_start();
+include 'taskadmin/db_connection.php'; // Include database connection
+
+$error_message = ""; // Initialize an empty error message
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $emailOrUsername = $_POST['email'];
+    $password = $_POST['password'];
+
+    $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE username = ? OR email = ?");
+    $stmt->bind_param("ss", $emailOrUsername, $emailOrUsername);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
+
+        if ($password === $user['password']) { // No hashing
+            $_SESSION['admin_id'] = $user['id']; // Store admin ID
+            $_SESSION['admin_username'] = $user['username']; // Store username
+
+            header("Location: index.php"); // Redirect to dashboard
+            exit();
+        } else {
+            $error_message = "Invalid password."; // Error message
+        }
+    } else {
+        $error_message = "User not found."; // Error message
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="style.css">
     <title>testing</title>
-    
+
 </head>
 
 <body>
@@ -43,7 +77,9 @@
             </div>
         </div>
     </div>
-        <script src="script.js"></script>
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>

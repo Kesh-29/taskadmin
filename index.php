@@ -25,17 +25,22 @@ $result = $conn->query($sql);
 
 <body>
 
-    <header class="navbar">
-        <img src="elements\mini_Logo.png" alt="Task Connect Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="index.php">Dashboard</a></li>
-                <li><a href="logout.php">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="logo-container">
+        <img src="TEST/Main_Logo.png" alt="Task Connect Logo" class="logo">
+    </div>
+    <div class="main-container">
+        <div class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="TEST/user.html">Users</a></li>
+                    <li><a href="#">Admin</a></li>
+                    <li><a href="#">Tasker Request</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
 
     <div class="admin-container">

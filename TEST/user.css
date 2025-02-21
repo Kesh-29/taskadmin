@@ -3,11 +3,12 @@
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('Side Background.png') no-repeat left center/cover, #0E2A3B;
+            background: url('Side_Background.png') no-repeat left center/cover, #0E2A3B;
             color: white;
             height: 100vh;
-            overflow: hidden;
             flex-direction: column;
+            width: fit-content;
+            overflow: hidden;
         }
         .logo-container {
             width: 100%;
@@ -17,7 +18,7 @@
         }
         .logo {
             width: 250px;
-
+            position: fixed;
         }
         .main-container {
             display: flex;
@@ -65,7 +66,8 @@
             display: flex;
             justify-content: center;
             align-items: flex-start;
-            height: auto;
+            height: 100vh;
+            margin-top: 20px;
         }
         .content-container {
             
@@ -74,11 +76,11 @@
             padding: 25px;
             border-radius: 15px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 95%; 
+            width: 100%; 
             max-width: 100%; 
-            margin-top: -110px; 
+            margin-top: -50px; 
             margin-bottom: 10px; 
-            min-height: 88vh; 
+            min-height: 83vh; 
 
 
         }
@@ -111,7 +113,7 @@
             background: white;
             border-color: #000000;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         
