@@ -6,7 +6,7 @@ body {
     padding: 0;
     display: flex;
     height: 200vh;
-    background: url("TEST/side_background.png") no-repeat center center fixed;
+    background: url("elements/side_background.png") no-repeat center center fixed;
     background-size: cover;
     flex-direction: column;
 }
