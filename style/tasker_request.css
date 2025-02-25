@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+    
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    background: url('elements/side_background.png') no-repeat center center fixed;
+    height: 120vh;
+    background-size: cover;
+    
+    
+}
+
+.sidebar {
+    width: 180px;
+    position: absolute;
+    height: 100vh;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    margin-bottom: 15px;
+}
+
+.logo {
+    width: 250px;
+    position: fixed;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 100px 0;
+    width: 100%;
+
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 20px;
+    text-align: right;
+    border-radius: 27px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-left: -80px;
+   
+}
+
+nav ul li a:hover {
+    background: #004bb5;
+}
+
+.main-container {
+    display: flex;
+    flex: 10 ;
+}
+
+.container {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    margin: 50px 50px 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20%;
+    height:min-content;
+
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px ;
+    text-align: center;
+    
+}
+
+.admin-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid #000000;
+
+}
+ .profile-initial{
+    margin-left: -55%;
+}
+.roles{
+    margin-left: -10%;
+}
+.Date{
+    margin-right: 11%;
+}
+
+.admin-box img{
+    width: 24px;
+    height: 24px;
+    margin-left: -00px;
+}
+.roles{
+    background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            
+    
+}
+
+.profile-initial {
+    width: 30px;
+    height: 30px;
+    background: #000;
+    color: white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.dropdown {
+    cursor: pointer;
+    text-align: right;
+
+}
