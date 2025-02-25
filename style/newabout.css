@@ -106,34 +106,93 @@ main {
     
 }
 .developer_kresner{
-    position: absolute;
-    top: 130%;
-
-
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
 }
+.developer_kresner img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fills the circle */
+    border: 3px solid #007bff; /* Optional border */
+    margin-bottom: 30px; /* Space between image and name */
+    margin-left: 10px;
+}
+
 .developer_venus{
   position: absolute;
   top: 130%;
   right: 19%;
+  display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+  
+}
+.developer_venus img{
+    width: 100px; /* Image size */
+    height: 100px;
+    border-radius: 50%; /* Makes image a circle */
+    margin-bottom: 30px; /* Space between image and name */
+    object-fit: cover; /* Ensures the image fills the circle */
+    border: 3px solid #007bff; /* Optional border */
+    
 }
 
 .developer_patrick{
     position: absolute;
     top: 130%;
-    left: 19%;
+    left: 18%;
+    display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
   }
+  .developer_patrick img{
+    width: 100px; /* Image size */
+    height: 100px;
+    border-radius: 50%; /* Makes image a circle */
+    margin-bottom: 30px; /* Space between image and name */
+    object-fit: cover; /* Ensures the image fills the circle */
+    border: 3px solid #007bff; /* Optional border */
+    
+}
 
   .developer_brian{
     position: absolute;
-    bottom: 10%;
-    right: 30%;
+    bottom: -90%;
+    right: 32%;
+    display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
   }
+  .developer_brian img{
+    width: 100px; /* Image size */
+    height: 100px;
+    border-radius: 50%; /* Makes image a circle */
+    margin-bottom: 30px; /* Space between image and name */
+    object-fit: cover; /* Ensures the image fills the circle */
+    border: 3px solid #007bff; /* Optional border */
+}
 
   .developer_brent{
     position: absolute;
-    bottom: 20%;
+    bottom: -90%;
     left: 30%;
+    display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
   }
+  .developer_brent img{
+    width: 100px; /* Image size */
+    height: 100px;
+    border-radius: 50%; /* Makes image a circle */
+    margin-bottom: 30px; /* Space between image and name */
+    object-fit: cover; /* Ensures the image fills the circle */
+    border: 3px solid #007bff; /* Optional border */
+}
 /* About Section */
 .about-section {
     max-width: 800px;
