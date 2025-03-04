@@ -21,18 +21,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows === 1) {
             $user = $result->fetch_assoc();
 
-            // DEBUGGING: Print actual password from database
-            echo "Stored Password: " . htmlspecialchars($user['password']) . "<br>";
-
-            if ($password === $user['password']) {
+            // Use password_verify() to check the hashed password
+            if (password_verify($password, $user['password'])) {
                 $_SESSION['admin_id'] = $user['id'];
                 $_SESSION['admin_username'] = $user['username'];
 
-                header("Location: index.php");
+                header("Location: user.html");
                 exit();
             } else {
                 $error_message = "Invalid password.";
-                exit(); // Stop further execution
             }
         } else {
             $error_message = "User not found.";
@@ -51,17 +48,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="container" id="container">
-        <!-- SIGN UP FORM (UNCHANGED) -->
+        <!-- REGISTER FORM -->
         <div class="form-container sign-up-container">
-            <form action="signup.php" method="POST">
+            <form action="register.php" method="POST">
                 <h1>Create Account</h1>
                 <span>or use your email for registration</span>
-                <input type="text" name="name" placeholder="Name" required />
+                <input type="text" name="username" placeholder="Username" required />
                 <input type="email" name="email" placeholder="Email" required />
                 <input type="password" name="password" placeholder="Password" required />
                 <button type="submit">Sign Up</button>
             </form>
         </div>
+
 
         <!-- LOGIN FORM (FIXED & DATABASE COMPATIBLE) -->
         <div class="form-container sign-in-container">
