@@ -1,51 +1,45 @@
-/* General Styles */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
 body {
-    color: white;
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
-    height: 200vh;
+    height: 120vh;
+    
     background: url("../elements/side_background.png") no-repeat center center fixed;
     background-size: cover;
-    flex-direction: column;
-}
-
-
-.logo-container {
-    width: 100%;
-    text-align: left;
-    padding: 30px;
-    padding-left: -5px;
-    position: fixed;
-}
-.logo {
-    width: 250px;
-
-}
-.main-container {
-    display: flex;
-    flex: 1;
 }
 .sidebar {
     width: 180px;
-    padding: 40px;
     position: fixed;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: left;
-    margin-top: 5px;
+    
 }
+
+.logo {
+    width: 250px;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+}
+
 nav ul {
     list-style: none;
     padding: 10px;
     width: 100%;
 }
+
 nav ul li {
-    margin: 60px 0;
+    margin: 100px 0;
     width: 100%;
+    margin-bottom: -40px;
+
 }
+
 nav ul li a {
     display: block;
     text-decoration: none;
@@ -57,147 +51,24 @@ nav ul li a {
     border-radius: 27px;
     width: 100%;
     border: 2px solid #000000;
-    Margin-left: -80px
+    margin-left: -80px;
+   
 }
+
 nav ul li a:hover {
     background: #004bb5;
 }
-
 /* Main Content */
 main {
     flex: 1;
     padding: 50px;
 }
-
-/* Developer Section */
-.developers {
-    text-align: center;
-    margin-top: 300px;
-}
-
-.developers h1 {
-    font-size: 28px;
-    font-weight: bold;
-    position: relative;
-    bottom: 100px;
-}
-
-.developers h1 span {
-    color: #00aaff;
-}
-
-.dev-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 90px;
-    margin-bottom: 8%;
-}
-
-.dev-item {
-    color: white;
-    font-size: 18px;
-    text-align: center;
-}
-
-.name {
-    color: #00aaff;
-    font-size: 22px;
-    
-}
-.developer_kresner{
-        color: white;
-        font-size: 16px;
-        text-align: center;
-        display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-}
-.developer_kresner img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image fills the circle */
-    border: 3px solid #007bff; /* Optional border */
-    margin-bottom: 30px; /* Space between image and name */
-    margin-left: 10px;
-}
-
-.developer_venus{
-  position: absolute;
-  top: 130%;
-  right: 19%;
-  display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-  
-}
-.developer_venus img{
-    width: 100px; /* Image size */
-    height: 100px;
-    border-radius: 50%; /* Makes image a circle */
-    margin-bottom: 30px; /* Space between image and name */
-    object-fit: cover; /* Ensures the image fills the circle */
-    border: 3px solid #007bff; /* Optional border */
-    
-}
-
-.developer_patrick{
-    position: absolute;
-    top: 130%;
-    left: 18%;
-    display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-  }
-  .developer_patrick img{
-    width: 100px; /* Image size */
-    height: 100px;
-    border-radius: 50%; /* Makes image a circle */
-    margin-bottom: 30px; /* Space between image and name */
-    object-fit: cover; /* Ensures the image fills the circle */
-    border: 3px solid #007bff; /* Optional border */
-    
-}
-
-  .developer_brian{
-    position: absolute;
-    bottom: -90%;
-    right: 32%;
-    display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-  }
-  .developer_brian img{
-    width: 100px; /* Image size */
-    height: 100px;
-    border-radius: 50%; /* Makes image a circle */
-    margin-bottom: 30px; /* Space between image and name */
-    object-fit: cover; /* Ensures the image fills the circle */
-    border: 3px solid #007bff; /* Optional border */
-}
-
-  .developer_brent{
-    position: absolute;
-    bottom: -90%;
-    left: 30%;
-    display: flex;
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-  }
-  .developer_brent img{
-    width: 100px; /* Image size */
-    height: 100px;
-    border-radius: 50%; /* Makes image a circle */
-    margin-bottom: 30px; /* Space between image and name */
-    object-fit: cover; /* Ensures the image fills the circle */
-    border: 3px solid #007bff; /* Optional border */
-}
 /* About Section */
 .about-section {
     max-width: 800px;
     margin: auto;
-    text-align: left;
+    text-align: center;
+    color: white;
 }
 
 .about-section p {
