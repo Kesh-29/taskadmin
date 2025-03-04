@@ -8,32 +8,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailOrUsername = $_POST['email'];
     $password = $_POST['password'];
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $emailOrUsername = $_POST['email'];
-        $password = $_POST['password'];
+    $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE username = ? OR email = ?");
+    $stmt->bind_param("ss", $emailOrUsername, $emailOrUsername);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-        // DEBUGGING: Display user input
-        $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE username = ? OR email = ?");
-        $stmt->bind_param("ss", $emailOrUsername, $emailOrUsername);
-        $stmt->execute();
-        $result = $stmt->get_result();
+    if ($result->num_rows === 1) {
+        $user = $result->fetch_assoc();
 
-        if ($result->num_rows === 1) {
-            $user = $result->fetch_assoc();
+        // Use password_verify() to check hashed password
+        if (password_verify($password, $user['password'])) {
+            $_SESSION['admin_id'] = $user['id'];
+            $_SESSION['admin_username'] = $user['username'];
 
-            // Use password_verify() to check the hashed password
-            if (password_verify($password, $user['password'])) {
-                $_SESSION['admin_id'] = $user['id'];
-                $_SESSION['admin_username'] = $user['username'];
-
-                header("Location: user.html");
-                exit();
-            } else {
-                $error_message = "Invalid password.";
-            }
+            header("Location: user.html");
+            exit();
         } else {
-            $error_message = "User not found.";
+            $error_message = "Invalid password.";
         }
+    } else {
+        $error_message = "User not found.";
     }
 }
 ?>
@@ -50,20 +44,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container" id="container">
         <!-- REGISTER FORM -->
         <div class="form-container sign-up-container">
-            <form action="register.php" method="POST">
+            <form id="registerForm">
                 <h1>Create Account</h1>
                 <span>or use your email for registration</span>
-                <input type="text" name="username" placeholder="Username" required />
-                <input type="email" name="email" placeholder="Email" required />
-                <input type="password" name="password" placeholder="Password" required />
+                <input type="text" id="reg_username" placeholder="Username" required />
+                <input type="email" id="reg_email" placeholder="Email" required />
+                <input type="password" id="reg_password" placeholder="Password" required />
+                <p id="register_error" style="color: red;"></p>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
 
-
         <!-- LOGIN FORM (FIXED & DATABASE COMPATIBLE) -->
         <div class="form-container sign-in-container">
-            <form action="login2.php" method="POST">
+            <form action="index.php" method="POST">
                 <h1>Login</h1>
                 <span>or use your account</span>
 
@@ -95,7 +89,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let username = document.getElementById("reg_username").value;
+            let email = document.getElementById("reg_email").value;
+            let password = document.getElementById("reg_password").value;
+            let errorMsg = document.getElementById("register_error");
+
+            fetch("register.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, email, password })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Registration successful!");
+                        location.reload(); // Refresh the page
+                    } else {
+                        errorMsg.innerText = data.message; // Display error message
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
     <script src="scripts/script.js"></script>
+
 </body>
 
 </html>
