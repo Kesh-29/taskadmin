@@ -8,37 +8,55 @@ body {
     background: url('../elements/side_background.png') no-repeat center center fixed;
     height: 100vh;
     overflow: hidden;
-}
-
-.sidebar {
-    width: 180px;
-    padding: 40px;
-    position: fixed;
-    height: 100vh;
-    display: flex;
     flex-direction: column;
-    align-items: left;
-    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+   
 }
 
+.logo-container {
+    width: 100%;
+    text-align: left;
+    padding: 35px;
+    padding-left: -2px;
+    
+}
 
 .logo {
     width: 250px;
     position: fixed;
 }
 
+.sidebar {
+    width: 200px; 
+    padding: 40px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: -10px;
+    left: 0; 
+}
+
+.main-container {
+    display: flex;
+    justify-content: center; 
+    flex: 1;
+    width: calc(100% - 200px); 
+    margin-left: 200px; 
+}
+
+
 nav ul {
     list-style: none;
     padding: 10px;
     width: 100%;
 }
-
 nav ul li {
-    margin: 100px 0;
+    margin: 60px 0;
     width: 100%;
-
 }
-
 nav ul li a {
     display: block;
     text-decoration: none;
@@ -50,18 +68,12 @@ nav ul li a {
     border-radius: 27px;
     width: 100%;
     border: 2px solid #000000;
-    margin-left: -80px;
-   
+    Margin-left: -100px
 }
-
 nav ul li a:hover {
     background: #004bb5;
 }
 
-.main-container {
-    display: flex;
-    flex: 1;
-}
 
 .container {
     flex: 1;
@@ -69,11 +81,17 @@ nav ul li a:hover {
     background: white;
     border-radius: 15px;
     margin: 50px 50px 50px auto;
-    width: 100%;
-    max-width: 1500px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+    width: 100%; 
+    max-width: 1500px; 
+    height: auto;
+    align-items: flex-start;
+    margin-left: 40px;
+    margin-right: -20px;
+    margin-top: -40px;
 }
+
+
 
 
 .admin-header {
@@ -94,7 +112,9 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-between;
     text-align: center;
+    align-items: center;
     border: 1px solid #000000;
+    
 
 }
 
