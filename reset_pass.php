@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ss", $new_password, $email);
 
     if ($stmt->execute()) {
-        echo "Password reset successful. <a href='login.php'>Login now</a>";
+        echo "Password reset successful. <a href='login2.php'>Login now</a>";
         session_destroy(); // Clear session data
     } else {
         echo "Error resetting password.";

@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <!-- LOGIN FORM (FIXED & DATABASE COMPATIBLE) -->
         <div class="form-container sign-in-container">
-            <form action="index.php" method="POST">
+            <form action="login2.php" method="POST">
                 <h1>Login</h1>
                 <span>or use your account</span>
 

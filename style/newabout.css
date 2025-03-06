@@ -11,7 +11,7 @@ body {
     background-size: cover;
 }
 .sidebar {
-    width: 180px;
+    width: 190px;
     position: fixed;
     height: 100vh;
     display: flex;
