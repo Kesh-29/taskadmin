@@ -1,129 +1,163 @@
-        body {
-            display: flex;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('../elements/side_background.png') no-repeat left center/cover, #0E2A3B;
-            color: white;
-            height: 100vh;
-            flex-direction: column;
-            width: fit-content;
-            overflow: hidden;
-        }
-        .logo-container {
-            width: 100%;
-            text-align: left;
-            padding: 30px;
-            padding-left: -5px;
-        }
-        .logo { 
-            width: 250px;
-            position: fixed;
-        }
-        .main-container {
-            display: flex;
-            flex: 1;
-        }
-        .sidebar {
-            width: 180px;
-            position: fixed;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            
-        }
-        nav ul {
-            list-style: none;
-            padding: 10px;
-            width: 100%;
-        }
-        nav ul li {
-            margin: 60px 0;
-            width: 100%;
-        }
-        nav ul li a {
-            display: block;
-            text-decoration: none;
-            color: white;
-            font-weight: 700;
-            background: #0066FF;
-            padding: 20px;
-            text-align: right;
-            border-radius: 27px;
-            width: 100%;
-            border: 2px solid #000000;
-            Margin-left: -80px
-        }
-        nav ul li a:hover {
-            background: #004bb5;
-        }
-        .content {
-            margin-left: 300px;
-            padding: 20px;
-            width: calc(100% - 270px);
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            height: 100vh;
-            margin-top: 20px;
-        }
-        .content-container {
-            
-            background: white;
-            color: black;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            width: 100%; 
-            max-width: 100%; 
-            margin-top: -50px; 
-            margin-bottom: 10px; 
-            min-height: 83vh; 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
+body {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../elements/side_background.png') no-repeat left center/cover, #0E2A3B;
+    color: white;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
 
-        }
-        h2 {
-            font-weight: bold;
-            text-align: left;
-            
-        }
-            
-       
-        table {
-            width: 100%;
-            border-collapse: separate; 
-            border-spacing: 0 40px; 
-            background: white;
-            color: black;
-            border-radius: 10px;
-        }
+.logo-container {
+    width: 100%;
+    text-align: left;
+    padding: 30px;
+}
 
-       
-        th {
-            color: black;
-            padding: 10px;
-            text-align: left;
-            font-weight: 500;
-        }
+.logo { 
+    width: 250px;
+    position: fixed;
+}
 
-       
-        tr {
-            background: white;
-            border-color: #000000;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.main-container {
+    display: flex;
+    flex: 1;
+}
 
-        
-        td {
-            padding: 15px;
-            text-align: left;
-            position: relative;
-        }
+.sidebar {
+    width: 180px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
 
-       
-        tbody tr:hover {
-            background: #f1f1f1;
-            transition: 0.2s ease-in-out;
-        }
+nav ul {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 60px 0;
+    width: 100%;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 20px;
+    text-align: right;
+    border-radius: 27px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-left: -80px;
+}
+
+nav ul li a:hover {
+    background: #004bb5;
+}
+
+/* Adjusted container width */
+.container {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 1300px;
+    min-height: 600px;
+    align-items: flex-start;
+}
+
+/* Title */
+h2 {
+    font-weight: bold;
+    text-align: left;
+    color: black;
+}
+
+/* Header and user row layout */
+.User-header,
+.user-box {
+    display: grid;
+    grid-template-columns: 5% 14% 14% 14% 14% 24% 9%; /* Slightly reduced column sizes */
+    width: 98%; /* Adjusted width to fit container */
+    padding: 10px;
+    text-align: center;
+    color: black;
+    align-items: center;
+    margin: 0 auto; /* Center alignment */
+}
+
+/* Header styles */
+.User-header {
+    font-weight: bold;
+    background: white;
+    padding: 15px 0;
+    border-radius: 0;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+}
+
+/* User Row Styling */
+.user-box {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    padding: 16px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    color: black;
+    display: grid;
+    align-items: center;
+    width: 98%; /* Shrunk width */
+    margin: 0 auto 10px auto; /* Centering */
+}
+
+/* Ensure text does not overflow */
+.user-box span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Dropdown Button Styling */
+.dropdown {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black"><path d="M5 7l5 5 5-5H5z"/></svg>') no-repeat right 10px center;
+    background-size: 12px;
+    
+    width: 90%; /* Ensure it fits the column */
+    max-width: 120px; /* Adjusted size */
+    padding: 10px 30px 10px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    text-align: center;
+    background-color: white;
+    color: black;
+    justify-self: center;
+}
+
+/* Remove hover effect that changed background */
+.user-box:hover {
+    background: white;
+    transition: none;
+}
