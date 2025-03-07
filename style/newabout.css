@@ -11,12 +11,13 @@ body {
     background-size: cover;
 }
 .sidebar {
-    width: 190px;
+    width: 188px;
     position: fixed;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: left;
+    bottom: -8.2px; ;
     
 }
 

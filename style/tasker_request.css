@@ -74,7 +74,7 @@ nav ul li a:hover {
     font-weight: bold;
     margin-bottom: 20px;
     padding: 10px ;
-    text-align: center;
+    margin-left: -1%;
     
 }
 
@@ -90,22 +90,34 @@ nav ul li a:hover {
     border: 1px solid #000000;
 
 }
+.pend_color{
+    color: #EDB02C
+}
+.comp_color{
+    color: #2BFF00
+}
+.dec_color{
+    color: #FF0000
+}
 
  .profile-initial{
     margin-left: -55%;
 }
 .roles{
-    margin-left: -10%;
+    margin-left: -5.5%;
 }
 .Date{
-    margin-right: 11%;
+    margin-right: 18%;
+    align-items: center;
+    right: 500px;
+    
 }
 
 .admin-box img{
     width: 24px;
     height: 24px;
-    position: relative;
-    right: 10px;
+    right: 50px;
+    
 }
 .roles{
     background: #007bff;
