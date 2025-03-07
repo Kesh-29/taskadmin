@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../elements/side_background.png') no-repeat left center/cover, #0E2A3B;
+    color: white;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.logo-container {
+    width: 100%;
+    text-align: left;
+    padding: 30px;
+}
+
+.logo { 
+    width: 250px;
+    position: fixed;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 180px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 60px 0;
+    width: 100%;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 20px;
+    text-align: right;
+    border-radius: 27px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-left: -80px;
+}
+
+nav ul li a:hover {
+    background: #004bb5;
+}
+
+
+
+.main-content {
+    flex: 1;
+    padding: 5px 70px;
+    margin-left: 280px;
+}
+
+
+.welcome-section {
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.welcome-section p {
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 300px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    gap: 2px;
+}
+
+
+.bottom-cards {
+    display: flex;
+    gap: 20px;
+}
+
+.extra-wide {
+    width: 1000px; 
+}
+
+
+.card h2 {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 20px;
+    margin-top: -30px;
+    font-weight: 500;
+    
+}
+
