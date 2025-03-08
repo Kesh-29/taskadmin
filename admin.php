@@ -27,10 +27,10 @@ $result = $conn->query($query);
         <div class="sidebar">
             <nav>
                 <ul>
+                    <li><a href="admindash.html">Dashboard</a></li>
                     <li><a href="user.php">Users</a></li>
                     <li><a href="admin.php">Admin</a></li>
                     <li><a href="tasker_request.html">Tasker Request</a></li>
-                    <li><a href="newabout.html">User Profile</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>

@@ -1,12 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 body {
-    
-    font-family: 'Montserrat', sans-serif;
     display: flex;
-    background: url('../elements/side_background.png') no-repeat center center fixed;
-    height: 120vh;
-    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../elements/side_background.png') no-repeat left center/cover, #0E2A3B;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar_logo {
+    width: 100%;
+    text-align: left;
+    padding: 30px;
+}
+
+.logo { 
+    width: 250px;
+    position: fixed;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
 }
 
 .sidebar {
@@ -15,13 +34,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    
-    
-}
-
-.logo {
-    width: 250px;
-    position: fixed;
+    align-items: left;
 }
 
 nav ul {
@@ -31,10 +44,8 @@ nav ul {
 }
 
 nav ul li {
-    margin: 100px 0;
+    margin: 60px 0;
     width: 100%;
-    margin-bottom: -40px;
-
 }
 
 nav ul li a {
@@ -49,7 +60,6 @@ nav ul li a {
     width: 100%;
     border: 2px solid #000000;
     margin-left: -80px;
-   
 }
 
 nav ul li a:hover {
@@ -61,10 +71,12 @@ nav ul li a:hover {
     padding: 30px;
     background: white;
     border-radius: 15px;
-    margin: 50px 50px 50px auto;
+    margin: 50px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left: 20%;
-    height:min-content;
+    width: 95%;
+    max-width: 1300px;
+    min-height: 600px;
+    align-items: flex-start;
 
 }
 
