@@ -1,6 +1,10 @@
 <?php
 session_start();
 include 'db_connection.php'; // Database connection
+if (!isset($_SESSION['user_id'])) { // Check if user is NOT logged in
+    header("Location: login2.php");
+    exit();
+}
 
 // Fetch all users from the database
 $query = "SELECT id, first_name, last_name, username, mobile_no, email FROM users";
