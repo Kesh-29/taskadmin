@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../elements/side_background.png') no-repeat left center/cover, #0E2A3B;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar_logo {
+    width: 100%;
+    text-align: left;
+    padding: 30px;
+}
+
+.logo { 
+    width: 250px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex: 1;
+    
+}
+.sort-box {
+    position: absolute;
+    top: 150px;
+    left: 78%;
+    font-size: 14px;
+}
+
+.sort-box select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+    cursor: pointer;
+    
+    
+}
+
+.sidebar {
+    width: 180px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 60px 0;
+    width: 100%;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 20px;
+    text-align: right;
+    border-radius: 27px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-left: -80px;
+}
+
+nav ul li a:hover {
+    background: #004bb5;
+}
+
+.container {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    margin: 50px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 1300px;
+    min-height: 600px;
+    align-items: flex-start;
+    overflow: scroll;
+    height: 300px;
+}
+
+
+.admin-header {
+    display: flex;
+    justify-content:space-between ;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 30px ;
+    margin-left: -1%;
+    
+}
+
+.admin-box {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    border: 1px solid #000000;
+
+}
+.dec_color{
+    color: #FF0000
+}
+.Date{
+    margin-right: -2%;
+    align-items: center;
+    right: 600px;
+    
+}
+
+
+
+
+
+    
+
