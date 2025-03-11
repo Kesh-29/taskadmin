@@ -32,8 +32,9 @@ $result = $conn->query($query);
                 <ul>
                     <li><a href="admindash.html">Dashboard</a></li>
                     <li><a href="user.php">Users</a></li>
-                    <li><a href="admin.php">Admin</a></li>
+                    <li><a href="admin.php">User Management</a></li>
                     <li><a href="tasker_request.html">Tasker Request</a></li>
+                    <li><a href="#">User Profile</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
