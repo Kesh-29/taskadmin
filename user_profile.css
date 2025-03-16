@@ -1,0 +1,151 @@
+body {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: url('../elements/side_background.png') no-repeat left center/cover, #0E2A3B;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.sidebar_logo {
+    width: 100%;
+    text-align: left;
+    padding: 30px;
+}
+
+.logo { 
+    width: 250px;
+    position: fixed;
+}
+
+
+.sidebar {
+    width: 180px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 60px 0;
+    width: 100%;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 20px;
+    text-align: right;
+    border-radius: 27px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-left: -80px;
+}
+
+nav ul li a:hover {
+    background: #004bb5;
+}
+
+.kresner_photo img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #f4f4f4;
+    position: absolute;
+    bottom: 350px;
+    right: 105px;
+  
+    
+}
+.container {
+    width: 400px;
+    height: 300px;
+    background: #f4f4f4;
+    border-radius: 10%;
+    position: absolute;
+    bottom: 250px;
+    left: 15%;
+    text-align: center;
+}
+.name {
+    font-size: 24px;
+    font-weight: bold;
+    
+}
+.title {
+    color: gray;
+}
+.info {
+    
+    margin-top: 10px;
+    left: 1000px;
+}
+
+.bio {
+    width: 400px;
+    height: 300px;
+    background: #f4f4f4;
+    border-radius: 10%;
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    text-align: center;
+    
+}
+.goals {
+    width: 400px;
+    height: 300px;
+    background: #f4f4f4;
+    border-radius: 10%;
+    position: absolute;
+    bottom: 100px;
+    right: 100px;
+    text-align: center;
+}
+.motivations {
+    width: 400px;
+    height: 300px;
+    background: #f4f4f4;
+    border-radius: 10%;
+    position: absolute;
+    top: 100px;
+    right: 600px;
+    text-align: center;
+}
+.Concerns {
+    width: 400px;
+    height: 300px;
+    background: #f4f4f4;
+    border-radius: 10%;
+    position: absolute;
+    bottom: 100px;
+    right: 600px;
+    text-align: center;
+}
+.editable {
+    width: 100%;
+    height: 60px;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-size: 16px;
+    padding: 5px;
+}
+
+
