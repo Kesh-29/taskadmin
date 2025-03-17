@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailOrUsername = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE username = ? OR email = ?");
+    $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE LOWER(username) = LOWER(?) OR LOWER(email) = LOWER(?)");
     $stmt->bind_param("ss", $emailOrUsername, $emailOrUsername);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -47,15 +47,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <form id="registerForm">
                 <h1>Create Account</h1>
                 <span>or use your email for registration</span>
+
+                <input type="text" id="reg_first_name" placeholder="First Name" required />
+                <input type="text" id="reg_last_name" placeholder="Last Name" required />
                 <input type="text" id="reg_username" placeholder="Username" required />
                 <input type="email" id="reg_email" placeholder="Email" required />
+                <input type="text" id="reg_mobile_no" placeholder="Mobile Number" required maxlength="11"
+                    pattern="\d{11}" />
                 <input type="password" id="reg_password" placeholder="Password" required />
+
                 <p id="register_error" style="color: red;"></p>
                 <button type="submit">Sign Up</button>
             </form>
         </div>
 
-        <!-- LOGIN FORM (FIXED & DATABASE COMPATIBLE) -->
+        <!-- LOGIN FORM -->
         <div class="form-container sign-in-container">
             <form action="login2.php" method="POST">
                 <h1>Login</h1>
@@ -72,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </form>
         </div>
 
-        <!-- OVERLAY CONTAINER (UNCHANGED) -->
+        <!-- OVERLAY CONTAINER -->
         <div class="overlay-container">
             <div class="overlay">
                 <div class="overlay-panel overlay-left">
@@ -93,15 +99,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         document.getElementById("registerForm").addEventListener("submit", function (e) {
             e.preventDefault();
 
+            let first_name = document.getElementById("reg_first_name").value;
+            let last_name = document.getElementById("reg_last_name").value;
             let username = document.getElementById("reg_username").value;
             let email = document.getElementById("reg_email").value;
+            let mobile_no = document.getElementById("reg_mobile_no").value;
             let password = document.getElementById("reg_password").value;
             let errorMsg = document.getElementById("register_error");
 
             fetch("register.php", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ username, email, password })
+                body: JSON.stringify({ first_name, last_name, username, email, mobile_no, password })
             })
                 .then(response => response.json())
                 .then(data => {

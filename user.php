@@ -1,13 +1,13 @@
 <?php
 session_start();
 include 'db_connection.php'; // Database connection
-if (!isset($_SESSION['user_id'])) { // Check if user is NOT logged in
+if (!isset($_SESSION['admin_id'])) { // Check if user is NOT logged in
     header("Location: login2.php");
     exit();
 }
 
 // Fetch all users from the database
-$query = "SELECT id, first_name, last_name, username, mobile_no, email FROM users";
+$query = "SELECT users_id, first_name, last_name, username, mobile_no, email FROM users";
 $result = $conn->query($query);
 ?>
 
@@ -32,9 +32,9 @@ $result = $conn->query($query);
                 <ul>
                     <li><a href="admindash.html">Dashboard</a></li>
                     <li><a href="user.php">Users</a></li>
-                    <li><a href="admin.php">User Management</a></li>
-                    <li><a href="tasker_request.html">Tasker Request</a></li>
-                    <li><a href="#">User Profile</a></li>
+                    <li><a href="admin.php">Admin List</a></li>
+                    <li><a href="tasker_request.php">Tasker Request</a></li>
+                    <li><a href="history.php">History</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
@@ -54,7 +54,7 @@ $result = $conn->query($query);
             <!-- Fetch and display users dynamically -->
             <?php while ($row = $result->fetch_assoc()): ?>
                 <div class="user-box">
-                    <span><?= htmlspecialchars($row['id']) ?></span>
+                    <span><?= htmlspecialchars($row['users_id']) ?></span>
                     <span><?= htmlspecialchars($row['first_name']) ?></span>
                     <span><?= htmlspecialchars($row['last_name']) ?></span>
                     <span><?= htmlspecialchars($row['username']) ?></span>

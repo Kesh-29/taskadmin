@@ -20,7 +20,10 @@ body {
 .logo { 
     width: 250px;
     position: fixed;
+    top: 20px;
+    left: 20px;
 }
+
 
 
 .sidebar {

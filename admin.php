@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'db_connection.php'; // Database connection
-if (!isset($_SESSION['user_id'])) { // Check if user is NOT logged in
+if (!isset($_SESSION['admin_id'])) { // Check if user is NOT logged in
     header("Location: login2.php");
     exit();
 }
@@ -33,9 +33,9 @@ $result = $conn->query($query);
                 <ul>
                     <li><a href="admindash.html">Dashboard</a></li>
                     <li><a href="user.php">Users</a></li>
-                    <li><a href="admin.php">Admin</a></li>
-                    <li><a href="tasker_request.html">Tasker Request</a></li>
-                    <li><a href="#">User Profile</a></li>
+                    <li><a href="admin.php">Admin List</a></li>
+                    <li><a href="tasker_request.php">Tasker Request</a></li>
+                    <li><a href="history.php">History</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>

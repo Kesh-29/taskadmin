@@ -2,7 +2,6 @@
 include 'db_connection.php';
 header("Content-Type: application/json"); // Set response type
 
-$error_message = "";
 $response = ["success" => false, "message" => ""];
 
 // Detect JSON request
@@ -10,13 +9,15 @@ $inputData = json_decode(file_get_contents("php://input"), true);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Handle both form and JSON input
+    $first_name = $inputData['first_name'] ?? $_POST['first_name'] ?? null;
+    $last_name = $inputData['last_name'] ?? $_POST['last_name'] ?? null;
     $username = $inputData['username'] ?? $_POST['username'] ?? null;
     $email = $inputData['email'] ?? $_POST['email'] ?? null;
+    $mobile_no = $inputData['mobile_no'] ?? $_POST['mobile_no'] ?? null;
     $password = $inputData['password'] ?? $_POST['password'] ?? null;
-    $user_type = $inputData['user_type'] ?? $_POST['user_type'] ?? 'admins'; // Default to 'admins'
 
     // Validate required fields
-    if (!$username || !$email || !$password) {
+    if (!$first_name || !$last_name || !$username || !$email || !$mobile_no || !$password) {
         $response["message"] = "All fields are required.";
         echo json_encode($response);
         exit();
@@ -25,18 +26,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Hash password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Check if username or email already exists in the selected table
-    $stmt = $conn->prepare("SELECT id FROM $user_type WHERE username = ? OR email = ?");
-    $stmt->bind_param("ss", $username, $email);
+    // Check if username, email, or mobile number already exists
+    $stmt = $conn->prepare("SELECT id FROM admins WHERE username = ? OR email = ? OR mobile_no = ?");
+    $stmt->bind_param("sss", $username, $email, $mobile_no);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        $response["message"] = "Username or Email already exists.";
+        $response["message"] = "Username, Email, or Mobile Number already exists.";
     } else {
-        // Insert into selected table (users or admins)
-        $stmt = $conn->prepare("INSERT INTO $user_type (username, email, password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $username, $email, $hashed_password);
+        // Insert into the admins table
+        $stmt = $conn->prepare("INSERT INTO admins (first_name, last_name, username, email, mobile_no, password) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("ssssss", $first_name, $last_name, $username, $email, $mobile_no, $hashed_password);
 
         if ($stmt->execute()) {
             $response["success"] = true;

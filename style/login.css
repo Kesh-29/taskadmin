@@ -124,6 +124,11 @@ input {
 	z-index: 1;
 }
 
+.sign-up-container button{
+	margin-bottom: 30px;
+	margin-top: -35px;
+}
+
 .container.right-panel-active .sign-up-container {
 	transform: translateX(100%);
 	opacity: 1;
