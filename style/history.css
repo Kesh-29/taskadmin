@@ -104,7 +104,7 @@ nav ul li a:hover {
 .admin-header,
 .admin-box {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* Equal spacing for 3 columns */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
     text-align: center;
     width: 100%;

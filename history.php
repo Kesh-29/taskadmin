@@ -3,7 +3,7 @@ session_start();
 include 'db_connection.php'; // Database connection
 
 // Fetch history data
-$query = "SELECT task_id, created_at, updated_at FROM tasks ORDER BY created_at DESC";
+$query = "SELECT task_id, created_at, updated_at, status FROM tasks ORDER BY created_at DESC";
 $result = $conn->query($query);
 ?>
 
@@ -51,14 +51,29 @@ $result = $conn->query($query);
                 <span>Task ID</span>
                 <span>Creation Date</span>
                 <span>Updated At</span>
+                <span>Status</span>
             </div>
 
             <?php while ($row = $result->fetch_assoc()): ?>
                 <div class="admin-box">
-                    <span
-                        title="<?= htmlspecialchars($row['task_id']) ?>"><?= substr(htmlspecialchars($row['task_id']), 0) ?></span>
+                    <span title="<?= htmlspecialchars($row['task_id']) ?>">
+                        <?= htmlspecialchars($row['task_id']) ?>
+                    </span>
                     <span class="Date"><?= htmlspecialchars($row['created_at']) ?></span>
-                    <span class="dec_color"><?= htmlspecialchars($row['updated_at']) ?></span>
+                    <span><?= htmlspecialchars($row['updated_at']) ?></span>
+
+                    <!-- Color-coded status -->
+                    <?php
+                    $statusClass = "";
+                    if ($row['status'] == 'pending') {
+                        $statusClass = "pend_color";
+                    } elseif ($row['status'] == 'completed') {
+                        $statusClass = "comp_color";
+                    } elseif ($row['status'] == 'canceled') {
+                        $statusClass = "dec_color";
+                    }
+                    ?>
+                    <span class="<?= $statusClass ?>"><?= htmlspecialchars($row['status']) ?></span>
                 </div>
             <?php endwhile; ?>
         </div>
