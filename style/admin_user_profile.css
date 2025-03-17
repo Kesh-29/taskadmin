@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    background: url('../elements/side_background.png') no-repeat left center/cover, #0E2A3B;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+.sidebar_logo {
+    width: 100%;
+    text-align: left;
+    padding: 30px;
+}
+
+.logo { 
+    width: 250px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+
+
+.sidebar {
+    width: 180px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 60px 0;
+    width: 100%;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 20px;
+    text-align: right;
+    border-radius: 27px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-left: -80px;
+}
+
+nav ul li a:hover {
+    background: #004bb5;
+}
+
+
+.main-content {
+    margin-left: 280px;
+    padding: 20px;
+    color: white;
+    margin-top: -50px;
+}
+
+.main-content h1 {
+    font-size: 30px;
+}
+
+.main-content p.welcome-text {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.3;
+}
+
+
+.profile-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-card {
+    background: white;
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 420px;
+    height: 620px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile-pic img {
+    width: 140px; 
+    height: 140px;
+    border-radius: 50%;
+    background-color: #0066FF;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+.profile-info p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.profile-info strong {
+    color: #0066FF;
+}
+
+.contact, .email, .address, .role {
+    display: block;
+    border-bottom: 2px solid #0066FF;
+    padding-bottom: 3px;
+   
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.edit-btn, .save-btn {
+    background: #0066FF;
+    border: none;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.edit-btn:hover, .save-btn:hover {
+    background: #004bb5;
+}
+
+.extra-card {
+    background: white;
+    width: 850px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.extra-card1{
+    background: white;
+    width: 850px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 500px;
+}
