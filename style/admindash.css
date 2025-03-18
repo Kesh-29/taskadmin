@@ -109,13 +109,14 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     color: black;
-    gap: 2px;
+    gap: 8px;
+    
 }
 
 
 .bottom-cards {
     display: flex;
-    gap: 20px;
+    gap: 50px;
 }
 
 .extra-wide {
@@ -134,4 +135,53 @@ nav ul li a:hover {
     font-weight: 500;
     
 }
+
+.card-dashboard {
+    width: 54.3%;
+    height: 550px;
+    background-color: #eceef1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 18%;
+    left: 38.8%;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .circle-border {
+    width: 400px; 
+    height: 400px; 
+    border-radius: 50%;
+    background-color: #d9d9d9; 
+    position: absolute;
+    margin-left: -30%;
+  }
+  
+  .legend {
+    margin-left: 40%;
+    margin-bottom: 20%;
+    color: black;
+    font-size: medium;
+    z-index: 1; /* Ensure legend stays on top */
+  }
+  
+  .legend ul {
+    list-style: none;
+  }
+  
+  .legend li {
+    margin: 35px 0; 
+    display: flex;
+    align-items: center;
+  }
+  
+  .legend li span {
+    font-weight: bold; 
+    margin-left: 20px; 
+  }
+
+
 
