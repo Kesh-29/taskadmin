@@ -1,13 +1,19 @@
 <?php
 session_start();
 include 'db_connection.php'; // Database connection
+
 if (!isset($_SESSION['admin_id'])) { // Check if user is NOT logged in
     header("Location: login2.php");
     exit();
 }
 
+// Prevent back button from accessing the page
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 // Fetch all admins from the database
-$query = "SELECT id, first_name, last_name, username, mobile_no, email FROM admins";
+$query = "SELECT admin_id, first_name, last_name, username, mobile_no, email FROM admins";
 $result = $conn->query($query);
 ?>
 
@@ -31,7 +37,7 @@ $result = $conn->query($query);
         <div class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="admindash.html">Dashboard</a></li>
+                    <li><a href="admindash.php">Dashboard</a></li>
                     <li><a href="user.php">Users</a></li>
                     <li><a href="admin.php">Admin List</a></li>
                     <li><a href="tasker_request.php">Tasker Request</a></li>
@@ -59,7 +65,7 @@ $result = $conn->query($query);
             <!-- Fetch and display admins -->
             <?php while ($row = $result->fetch_assoc()): ?>
                 <div class="admin-box">
-                    <span><?= htmlspecialchars($row['id']) ?></span>
+                    <span><?= htmlspecialchars($row['admin_id']) ?></span>
                     <span><?= htmlspecialchars($row['first_name']) ?></span>
                     <span><?= htmlspecialchars($row['last_name']) ?></span>
                     <span><?= htmlspecialchars($row['username']) ?></span>

@@ -1,31 +1,38 @@
 <?php
 require 'db_connection.php';
+session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (!isset($_SESSION['admin_id'])) {
+    die("Unauthorized access.");
+}
+
+$admin_id = $_SESSION['admin_id'];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $verification_id = $_POST['verification_id'];
     $action = $_POST['action'];
 
-    // Validate action
-    if ($action === 'approve') {
-        $status = 'approved';
-    } elseif ($action === 'reject') {
-        $status = 'rejected';
-    } else {
-        die("Invalid action.");
+    if ($action == "approve") {
+        // Approve request and mark user as a tasker
+        $stmt = $conn->prepare("UPDATE users 
+                                JOIN verification_requests vr ON users.users_id = vr.users_id
+                                SET users.verified = 1, users.is_tasker = 1, 
+                                    vr.status = 'approved', vr.reviewed_at = NOW(), vr.reviewed_by = ?
+                                WHERE vr.verification_id = ?");
+        $stmt->bind_param("is", $admin_id, $verification_id);
+        $stmt->execute();
+        $stmt->close();
+    } elseif ($action == "reject") {
+        // Reject request
+        $stmt = $conn->prepare("UPDATE verification_requests 
+                                SET status = 'rejected', reviewed_at = NOW(), reviewed_by = ?
+                                WHERE verification_id = ?");
+        $stmt->bind_param("is", $admin_id, $verification_id);
+        $stmt->execute();
+        $stmt->close();
     }
-
-    // Update verification request status
-    $stmt = $conn->prepare("UPDATE verification_requests SET status = ?, reviewed_at = NOW() WHERE verification_id = ?");
-    $stmt->bind_param("ss", $status, $verification_id);
-
-    if ($stmt->execute()) {
-        header("Location: tasker_request.php?success=1");
-        exit;
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
-    $conn->close();
 }
-?>
+
+// Redirect back to tasker request page
+header("Location: tasker_request.php?success=1");
+exit();

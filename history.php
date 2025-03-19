@@ -1,6 +1,11 @@
 <?php
 session_start();
+
 include 'db_connection.php'; // Database connection
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: login2.php");
+    exit();
+}
 
 // Fetch history data
 $query = "SELECT task_id, created_at, updated_at, status FROM tasks ORDER BY created_at DESC";
@@ -34,7 +39,7 @@ $result = $conn->query($query);
         <div class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="admindash.html">Dashboard</a></li>
+                    <li><a href="admindash.php">Dashboard</a></li>
                     <li><a href="user.php">Users</a></li>
                     <li><a href="admin.php">Admin List</a></li>
                     <li><a href="tasker_request.php">Tasker Request</a></li>

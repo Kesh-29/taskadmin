@@ -1,8 +1,16 @@
 <?php
 require 'db_connection.php';
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: login2.php");
+    exit();
+}
+
 
 // Fetch all pending verification requests
-$sql = "SELECT vr.verification_id, u.first_name, u.last_name, u.email, vr.status, vr.applied_at, vr.document 
+$sql = "SELECT vr.verification_id, u.first_name, u.last_name, u.email, vr.status, u.is_tasker, vr.applied_at 
         FROM verification_requests vr
         JOIN users u ON vr.users_id = u.users_id
         WHERE vr.status = 'pending'";
@@ -29,7 +37,7 @@ $result = $conn->query($sql);
         <div class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="admindash.html">Dashboard</a></li>
+                    <li><a href="admindash.php">Dashboard</a></li>
                     <li><a href="user.php">Users</a></li>
                     <li><a href="admin.php">Admin List</a></li>
                     <li><a href="tasker_request.php">Tasker Request</a></li>
@@ -42,6 +50,12 @@ $result = $conn->query($sql);
 
         <div class="container">
             <h2>TASKER REQUESTS</h2>
+
+            <!-- Success Message -->
+            <?php if (isset($_GET['success'])): ?>
+                <p style="color: green;">Action completed successfully.</p>
+            <?php endif; ?>
+
             <div class="admin-header">
                 <span>Request ID</span>
                 <span>Name</span>
@@ -62,11 +76,12 @@ $result = $conn->query($sql);
                             <span>{$row['email']}</span>
                             <span>{$row['applied_at']}</span>
                             <span><img src='{$imageSrc}' width='100' height='100'></span>
-                            <span class='pend_color'>{$row['status']}</span>
+                            <span class='pend_color'>"
+                        . (($row['is_tasker'] == 1) ? "Tasker" : "Pending") .
+                        "</span>
                             <form method='POST' action='process_verification.php'>
                                 <input type='hidden' name='verification_id' value='{$row['verification_id']}'>
-                                <select name='action'>
-                                    <option value='' disabled selected>Choose</option>
+                                <select name='action' required>
                                     <option value='approve'>Approve</option>
                                     <option value='reject'>Reject</option>
                                 </select>
@@ -80,6 +95,12 @@ $result = $conn->query($sql);
             ?>
         </div>
     </div>
+
+    <script>
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 </body>
 
 </html>

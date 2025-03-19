@@ -8,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailOrUsername = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, username, email, password FROM admins WHERE LOWER(username) = LOWER(?) OR LOWER(email) = LOWER(?)");
+    // Query to check admin credentials
+    $stmt = $conn->prepare("SELECT admin_id, username, email, password FROM admins WHERE LOWER(username) = LOWER(?) OR LOWER(email) = LOWER(?)");
     $stmt->bind_param("ss", $emailOrUsername, $emailOrUsername);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -18,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Use password_verify() to check hashed password
         if (password_verify($password, $user['password'])) {
-            $_SESSION['admin_id'] = $user['id'];
+            $_SESSION['admin_id'] = $user['admin_id']; // Now correctly referencing admin_id
             $_SESSION['admin_username'] = $user['username'];
 
             header("Location: user.php");
