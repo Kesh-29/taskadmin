@@ -47,8 +47,12 @@ nav ul {
 }
 
 nav ul li {
-    margin: 60px 0;
+    margin: 50px 0;
     width: 100%;
+}
+
+nav li:hover{
+    transform: scale(1.15);
 }
 
 nav ul li a {

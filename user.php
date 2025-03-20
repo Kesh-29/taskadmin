@@ -18,7 +18,7 @@ $result = $conn->query($query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Connect - Users</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
     <link rel="stylesheet" href="style/user.css">
 </head>
 
@@ -34,14 +34,14 @@ $result = $conn->query($query);
                     <li><a href="user.php">Users</a></li>
                     <li><a href="admin.php">Admin List</a></li>
                     <li><a href="tasker_request.php">Tasker Request</a></li>
-                    <li><a href="admin_user_profile.html">User Profile</a></li>
+                    <li><a href="admin_user_profile.php">User Profile</a></li>
                     <li><a href="history.php">History</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div>
         <div class="container">
-            <h2>TASKER</h2>
+            <h2>USERS</h2>
             <div class="User-header">
                 <span>ID</span>
                 <span>First Name</span>
