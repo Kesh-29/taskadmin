@@ -125,7 +125,7 @@ while ($row = $verificationResult->fetch_assoc()) {
                 </a>
                 <div class="stats-card total-civilians">
                     <h2><?= $totalCivilians ?></h2>
-                    <p>Total Civilians</p>
+                    <p>Total Citizens</p>
                 </div>
                 <div class="stats-card total-taskers">
                     <h2><?= $totalTaskers ?></h2>

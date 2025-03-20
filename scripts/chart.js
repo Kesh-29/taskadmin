@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     new Chart(ctxPie, {
         type: "pie",
         data: {
-            labels: ["Civilians", "Taskers"],
+            labels: ["Citizens", "Taskers"],
             datasets: [
                 {
                     data: [civiliansPercentage, taskersPercentage],
