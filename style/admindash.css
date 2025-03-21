@@ -156,7 +156,7 @@ nav ul li a:hover {
 .total-civilians {
     position: absolute;
     top: 18%;
-    left: 680px;
+    left: 660px;
 }
 
 .total-taskers {
@@ -168,7 +168,7 @@ nav ul li a:hover {
 .pending-requests {
     position: absolute;
     top: 40%;
-    left: 680px;
+    left: 660px;
 }
 
 /* Adjust the Pie Chart */
