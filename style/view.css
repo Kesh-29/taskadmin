@@ -74,6 +74,22 @@ body {
         
         transition: background 0.2s ease; 
     }
+    nav ul li a[href="admin.php"] {
+        font-size: 0.85em;
+        padding: 8px 15px;
+        line-height: 1.2;
+        white-space: normal;
+        word-break: break-word;
+    }
+    nav ul li a[href="tasker_request.php"] {
+        font-size: 0.85em;
+        padding: 8px 15px;
+        line-height: 1.2;
+        white-space: normal;
+        word-break: break-word;
+    }
+    
+    
 
 nav ul li a:hover {
     background: #004bb5;
