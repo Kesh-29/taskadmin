@@ -50,13 +50,14 @@ body {
     nav ul li {
         
         width: 100%;
-        margin: 35px 0; /* Ultra-compact */
+        margin: 35px 0; 
 
     }
 
     nav li:hover {
-        transform: scale(1.05); /* More subtle hover effect */
-        transition: transform 0.2s ease; /* Smooth transition */
+        transform: scale(1.05); 
+        transition: transform 0.2s ease;
+        background: #004bb5;
     }
 
     nav ul li a {
@@ -89,13 +90,8 @@ body {
         word-break: break-word;
     }
     
-    
-
-nav ul li a:hover {
-    background: #004bb5;
-}
 .profile-wrapper {
-    margin-left: 250px; /* Make space for sidebar */
+    margin-left: 250px; 
     padding: 30px;
     display: flex;
     flex-direction: column;
@@ -128,18 +124,18 @@ nav ul li a:hover {
     background: #e0e5ff url('../elements/patrick_photo.png') no-repeat center / cover;
     margin-right: 20px;
     overflow: hidden;
-    /* Debug border - remove after fixing */
+    
     
 }
 
 .profile-info h1 {
-    font-size: 20px; /* Larger name */
+    font-size: 20px; 
     margin-bottom: 10px;
 }
 
 .profile-info p {
     opacity: 0.9;
-    font-size: 15px; /* Larger text */
+    font-size: 15px; 
     margin-bottom: 10px;
 }
 
@@ -147,7 +143,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     margin-top: 10px;
-    font-size: 15px; /* Larger location text */
+    font-size: 15px; 
 }
 
 .info-section {
