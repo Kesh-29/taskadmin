@@ -10,7 +10,7 @@ if (!isset($_SESSION['admin_id'])) {
 
 
 // Fetch all pending verification requests
-$sql = "SELECT vr.verification_id, u.first_name, u.last_name, u.email, vr.status, u.is_tasker, vr.applied_at 
+$sql = "SELECT vr.verification_id, u.first_name, u.last_name, u.email, vr.status, u.is_tasker, vr.created_at
         FROM verification_requests vr
         JOIN users u ON vr.users_id = u.users_id
         WHERE vr.status = 'pending'";
@@ -81,7 +81,7 @@ $result = $conn->query($sql);
                             <span>{$row['verification_id']}</span>
                             <span>{$row['first_name']} {$row['last_name']}</span>
                             <span>{$row['email']}</span>
-                            <span>{$row['applied_at']}</span>
+                            <span>{$row['created_at']}</span>
                             <span><img src='{$imageSrc}' width='100' height='100'></span>
                             <span class='pend_color'>"
                         . (($row['is_tasker'] == 1) ? "Tasker" : "Pending") .
