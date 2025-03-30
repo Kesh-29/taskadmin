@@ -37,7 +37,7 @@ $result = $conn->query($query);
         <div class="sidebar">
             <nav>
                 <ul>
-                li><a href="admindash.php">Dashboard</a></li>
+                    <li><a href="admindash.php">Dashboard</a></li>
                     <li><a href="user.php">Tasker</a></li>
                     <li><a href="tasker_request.php">Tasker<br>Request</a></li>
                     <li><a href="history.php">Job Request</a></li>

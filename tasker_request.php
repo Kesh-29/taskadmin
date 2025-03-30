@@ -41,7 +41,7 @@ $result = $conn->query($sql);
                     <li><a href="user.php">Tasker</a></li>
                     <li><a href="tasker_request.php">Tasker<br>Request</a></li>
                     <li><a href="history.php">Job Request</a></li>
-                    <li><a href="admin.php">User<br> Management</a></li>
+                    <li><a href="admin.php">User <br> Management</a></li>
                     <li><a href="view.html">User Profile</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
