@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="view.css">
+    <link rel="stylesheet" href="style/view.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
 </head>
 <body>
     <div class="sidebar_logo">
@@ -16,88 +17,140 @@
                 <ul>
                     <li><a href="admindash.php">Dashboard</a></li>
                     <li><a href="user.php">Tasker</a></li>
-                    <li><a href="tasker_request.php">Tasker Request</a></li>
+                    <li><a href="tasker_request.php">Tasker<br>Request</a></li>
                     <li><a href="history.php">Job Request</a></li>
-                    <li><a href="admin.php">Admin List</a></li>
-                    <li><a href="admin_user_profile.html">User Profile</a></li>
+                    <li><a href="admin.php">User<br> Management</a></li>
+                    <li><a href="view.html">User Profile</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div> 
 
-        <div class="profile-wrapper">
-            <!-- Profile Header stupid idiot-->
-            <div class="profile-header-section">
-                <div class="profile-header">
-                    <div class="profile-avatar">PC</div>
-                    <div class="profile-info">
-                        <h1>Patrick Cruz</h1>
-                        <p>Admin</p>
-                        <div class="profile-location">
-                            
-                            <span>Domalandan Center Lingayen Pangasinan</span>
+            <div class="profile-wrapper">
+                
+                <div class="profile-header-section">
+                    <div class="profile-header">
+                        <div class="profile-avatar"></div>
+                        <div class="profile-info">
+                            <h1>Patrick Cruz</h1>
+                            <p>Admin</p>
+                            <div class="profile-location">
+                                
+                                <span>Domalandan Center Lingayen Pangasinan</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             
-            <!-- Personal Information Section na walang kwentaaaaaa -->
-            <div class="info-section">
-                <h2 class="section-title">Personal Information</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">First Name</div>
-                        <div class="info-value">Patrick</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">Email Address</div>
-                        <div class="info-value">Patrickcruz12345@gmail.com</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">Last Name</div>
-                        <div class="info-value">Cruz</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">Phone Number</div>
-                        <div class="info-value">+63 9812896944</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">Date of Birth</div>
-                        <div class="info-value">2-13-2003</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">User Role</div>
-                        <div class="info-value">Admin</div>
-                    </div>
-                </div>
-            </div>
             
-            <!-- Address kooooooooooooooooooooooooooooo -->
-            <div class="Address-section">
-                <h2 class="section-title">Address</h2>
-                <div class="info-grid">
-                    <div class="info-item">
-                        <div class="info-label">Country</div>
-                        <div class="info-value">Philippines</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">City</div>
-                        <div class="info-value">Lingayen, Pangasinan</div>
-                    </div>
-                    
-                    <div class="info-item">
-                        <div class="info-label">Portal Code</div>
-                        <div class="info-value">2401</div>
-                    </div>
-                </div>
-                <button class="edit-btn">Edit</button>
+            
+    <div class="info-section">
+        <h2 class="section-title">Personal Information</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">First Name</div>
+                <div class="info-value" data-field="firstName">Patrick</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Email Address</div>
+                <div class="info-value" data-field="email">Patrickcruz12345@gmail.com</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Last Name</div>
+                <div class="info-value" data-field="lastName">Cruz</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Phone Number</div>
+                <div class="info-value" data-field="phone">+63 9812896944</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Date of Birth</div>
+                <div class="info-value" data-field="birthDate">2-13-2003</div>
+            </div>
+        
+        </div>
+        <button class="edit-btn">Edit</button> 
+    </div>
+
+    <div class="Address-section">
+        <h2 class="section-title">Address</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <div class="info-label">Country</div>
+                <div class="info-value" data-field="country">Philippines</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">City</div>
+                <div class="info-value" data-field="city">Lingayen, Pangasinan</div>
+            </div>
+            <div class="info-item">
+                <div class="info-label">Portal Code</div>
+                <div class="info-value" data-field="postalCode">2401</div>
             </div>
         </div>
+        <button class="edit-btn">Edit</button>
+    </div>
+        <script src="scripts/chart.js"></script> <!-- Separate JS file for the chart -->
+        <script>
+            document.querySelectorAll('.edit-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const section = this.closest('.info-section, .Address-section');
+        const isEditing = this.textContent === 'Save';
+        
+        // Toggle all fields in this section
+        section.querySelectorAll('.info-value').forEach(field => {
+            if (isEditing) {
+                // Save mode - update the text
+                const input = field.querySelector('input, select');
+                if (input) {
+                    field.textContent = input.value;
+                    
+                    // Special case: Update profile header name if editing first/last name
+                    if (field.getAttribute('data-field') === 'firstName' || 
+                        field.getAttribute('data-field') === 'lastName') {
+                        updateProfileHeader();
+                    }
+                }
+            } else {
+                // Edit mode - create input
+                const fieldName = field.getAttribute('data-field');
+                const currentValue = field.textContent;
+                
+                if (fieldName === 'country' || fieldName === 'city' || 
+                    fieldName === 'postalCode' || fieldName === 'firstName' || 
+                    fieldName === 'lastName' || fieldName === 'email' || 
+                    fieldName === 'phone') {
+                    // Regular text input
+                    field.innerHTML = `<input type="text" value="${currentValue}">`;
+                } else if (fieldName === 'birthDate') {
+                    // Date input
+                    field.innerHTML = `<input type="date" value="${formatDateForInput(currentValue)}">`;
+                } 
+            }
+        });
+        
+        // Toggle button text
+        this.textContent = isEditing ? 'Edit' : 'Save';
+    });
+});
+
+function formatDateForInput(dateString) {
+    if (!dateString) return '';
+    const parts = dateString.split('-');
+    if (parts.length === 3) {
+        return `${parts[2]}-${parts[0].padStart(2, '0')}-${parts[1].padStart(2, '0')}`;
+    }
+    return dateString;
+}
+
+function updateProfileHeader() {
+    const firstName = document.querySelector('[data-field="firstName"]').textContent;
+    const lastName = document.querySelector('[data-field="lastName"]').textContent;
+    document.querySelector('.profile-info h1').textContent = `${firstName} ${lastName}`;
+}
+        </script>
+
+
+        
     </body>
     </html>

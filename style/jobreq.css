@@ -10,7 +10,6 @@ body {
     flex-direction: column;
     width: 100%;
     overflow: hidden;
-   
 }
 
 .sidebar_logo {
@@ -92,61 +91,36 @@ body {
     }
 
 
-.container {
-    flex: 1;
-    padding: 30px;
-    background: white;
-    border-radius: 15px;
-    margin: 50px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 95%;
-    max-width: 1300px;
-    min-height: 600px;
-    align-items: flex-start;
+.content-box {
+    width: 80%; 
+    height: 800px; 
+    background: white; 
+    border-radius: 15px; 
+    margin: 5px auto;
+    margin-left: 300px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    position: relative;
 }
 
-
-
-
-.admin-header, .admin-box {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 3fr 2fr; /* Adjust column widths as needed */
-    align-items: center;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.admin-header {
-    font-weight: bold;
-    border-bottom: 2px solid #000;
-    margin-bottom: 15px;
-}
-
-.admin-box {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    padding: 15px;
-    margin-bottom: 15px;
-    border: 1px solid #000;
-}
-
-.dropdown {
-    appearance: none; /* Removes default styles */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="black"><path d="M5 7l5 5 5-5H5z"/></svg>') no-repeat right 10px center;
-    background-size: 12px; /* Adjust the size of the arrow */
-
-    width: 100%; /* Makes sure it fills the column */
-    max-width: 150px; /* Adjust based on your table width */
-    padding: 10px 35px 10px 10px; /* Space for arrow and text */
-    border: none; /* Remove border */
-    border-radius: 5px;
-    font-size: 16px;
+.back-button {
+    background: white; 
+    color: rgb(57, 94, 242); 
+    border: none;
+    border-radius: 50%; 
+    width: 50px;
+    height: 50px;
+    font-size: 40px;
     cursor: pointer;
-    outline: none;
-    text-align: left; /* Align text properly */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.back-button:hover {
+    background: #00338c; 
+}
