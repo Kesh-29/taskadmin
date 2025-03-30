@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+body {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../elements/side_background.png') no-repeat left center/cover, #0E2A3B;
+    height: 100vh;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar_logo {
+    width: 100%;
+    text-align: left;
+    padding: 30px;
+}
+
+.logo { 
+    width: 250px;   
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+
+.main-container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    width: 180px;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
+
+nav ul li {
+    margin: 50px 0;
+    width: 100%;
+}
+
+nav li:hover{
+    transform: scale(1.15);
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 20px;
+    text-align: right;
+    border-radius: 27px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-left: -80px;
+}
+
+nav ul li a:hover {
+    background: #004bb5;
+}
+
+nav ul li a[href="admin.php"] {
+    font-size: 1em;
+    padding: 15px 15px;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
+}
+nav ul li a[href="tasker_request.php"] {
+    font-size: 1em;
+    padding: 15px 15px;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
+}
