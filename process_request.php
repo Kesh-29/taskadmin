@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $action = $_POST['action'];
 
     if ($action == "approve") {
-        // Approve request, update users table, and mark them as a tasker
+        // Approve request, update users table, and mark them as a Tasker
         $stmt = $conn->prepare("UPDATE users 
                                 JOIN verification_requests vr ON users.users_id = vr.users_id
                                 SET users.verified = 1, users.is_tasker = 1, 
@@ -34,6 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Redirect back to tasker request page
+// Redirect back to Tasker request page
 header("Location: tasker_request.php?success=1");
 exit();

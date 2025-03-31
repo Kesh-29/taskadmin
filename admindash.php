@@ -91,7 +91,7 @@ while ($row = $verificationResult->fetch_assoc()) {
 
 <body>
 
-<div class="sidebar_logo">
+    <div class="sidebar_logo">
         <img src="elements/Main_Logo.png" alt="Task Connect" class="logo">
     </div>
     <div class="main-container">
@@ -99,15 +99,15 @@ while ($row = $verificationResult->fetch_assoc()) {
             <nav>
                 <ul>
                     <li><a href="admindash.php">Dashboard</a></li>
-                    <li><a href="user.php">Tasker</a></li>
+                    <li><a href="user.php">Users</a></li>
                     <li><a href="tasker_request.php">Tasker<br>Request</a></li>
-                    <li><a href="history.php">Job Request</a></li>
-                    <li><a href="admin.php">User <br> Management</a></li>
-                    <li><a href="view.html">User Profile</a></li>
+                    <li><a href="history.php">Req History</a></li>
+                    <li><a href="admin.php">Admin <br> Management</a></li>
+                    <li><a href="admin_profile.php">User Profile</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
-        </div> 
+        </div>
 
         <main class="main-content">
             <div class="welcome-section">
@@ -126,10 +126,12 @@ while ($row = $verificationResult->fetch_assoc()) {
                     <h2><?= $totalCivilians ?></h2>
                     <p>Total Citizens</p>
                 </div>
-                <div class="stats-card total-taskers">
-                    <h2><?= $totalTaskers ?></h2>
-                    <p>Total Taskers</p>
-                </div>
+                <a href="user.php">
+                    <div class="stats-card total-taskers">
+                        <h2><?= $totalTaskers ?></h2>
+                        <p>Total Taskers</p>
+                    </div>
+                </a>
                 <a href="tasker_request.php" class="stats-card pending-requests"> <!-- Clickable Card -->
                     <div>
                         <h2><?= $totalPendingRequests ?></h2>

@@ -2,37 +2,65 @@
 require 'db_connection.php';
 session_start();
 
+header('Content-Type: application/json');
+
+// Check if admin is logged in
 if (!isset($_SESSION['admin_id'])) {
-    die("Unauthorized access.");
+    echo json_encode(['success' => false, 'error' => 'Unauthorized']);
+    exit();
 }
 
-$admin_id = $_SESSION['admin_id'];
+// Get JSON input
+$data = json_decode(file_get_contents('php://input'), true);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $verification_id = $_POST['verification_id'];
-    $action = $_POST['action'];
+if (!$data || !isset($data['verification_id']) || !isset($data['action']) || !isset($data['admin_id'])) {
+    echo json_encode(['success' => false, 'error' => 'Invalid request']);
+    exit();
+}
 
-    if ($action == "approve") {
-        // Approve request and mark user as a tasker
-        $stmt = $conn->prepare("UPDATE users 
-                                JOIN verification_requests vr ON users.users_id = vr.users_id
-                                SET users.verified = 1, users.is_tasker = 1, 
-                                    vr.status = 'approved', vr.reviewed_at = NOW(), vr.reviewed_by = ?
-                                WHERE vr.verification_id = ?");
-        $stmt->bind_param("is", $admin_id, $verification_id);
-        $stmt->execute();
-        $stmt->close();
-    } elseif ($action == "reject") {
-        // Reject request
-        $stmt = $conn->prepare("UPDATE verification_requests 
-                                SET status = 'rejected', reviewed_at = NOW(), reviewed_by = ?
-                                WHERE verification_id = ?");
-        $stmt->bind_param("is", $admin_id, $verification_id);
-        $stmt->execute();
-        $stmt->close();
+$verificationId = $data['verification_id'];
+$action = $data['action'];
+$adminId = $data['admin_id'];
+
+// Validate action
+if (!in_array($action, ['approve', 'reject'])) {
+    echo json_encode(['success' => false, 'error' => 'Invalid action']);
+    exit();
+}
+
+// Determine new status
+$status = $action === 'approve' ? 'approved' : 'rejected';
+
+try {
+    // Start transaction
+    $conn->begin_transaction();
+
+    // Update verification request
+    $stmt = $conn->prepare("UPDATE verification_requests 
+                           SET status = ?, reviewed_by = ?, accepted_on = IF(? = 'approve', NOW(), NULL)
+                           WHERE verification_id = ? AND status = 'pending'");
+
+    $stmt->bind_param("siss", $status, $adminId, $action, $verificationId);
+    $stmt->execute();
+
+    // If approved, update user's is_tasker status
+    if ($action === 'approve') {
+        $updateUser = $conn->prepare("UPDATE users SET is_tasker = 1 
+                                     WHERE users_id = (SELECT users_id FROM verification_requests 
+                                                     WHERE verification_id = ?)");
+        $updateUser->bind_param("s", $verificationId);
+        $updateUser->execute();
     }
+
+    // Commit transaction
+    $conn->commit();
+
+    echo json_encode(['success' => true]);
+
+} catch (Exception $e) {
+    $conn->rollback();
+    echo json_encode(['success' => false, 'error' => $e->getMessage()]);
 }
 
-// Redirect back to tasker request page
-header("Location: tasker_request.php?success=1");
-exit();
+$conn->close();
+?>

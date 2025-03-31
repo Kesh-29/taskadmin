@@ -33,16 +33,16 @@ $result = $conn->query($sql);
                     <li><a href="admindash.php">Dashboard</a></li>
                     <li><a href="user.php">Tasker</a></li>
                     <li><a href="tasker_request.php">Tasker<br>Request</a></li>
-                    <li><a href="history.php">Job Request</a></li>
+                    <li><a href="history.php">Req History</a></li>
                     <li><a href="admin.php">User<br> Management</a></li>
-                    <li><a href="view.html">User Profile</a></li>
+                    <li><a href="admin_profile.php">User Profile</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div>
 
         <div class="container">
-            <h2>TASKER REQUESTS</h2>
+            <h2>Tasker REQUESTS</h2>
 
             <div class="admin-header">
                 <span>Request ID</span>
@@ -79,7 +79,7 @@ $result = $conn->query($sql);
                           </div>";
                 }
             } else {
-                echo "<p>No tasker requests found.</p>";
+                echo "<p>No Tasker requests found.</p>";
             }
 
             $conn->close();

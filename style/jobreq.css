@@ -26,69 +26,69 @@ body {
 }
 
 
-    .main-container {
-        display: flex;
-        flex: 1;
-    }
+.main-container {
+    display: flex;
+    flex: 1;
+}
 
-    .sidebar {
-        width: 180px;
-        position: fixed;
-        top: 80px; /* Space from top */
-        height: 100vh; /* Full height */
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-    }
+.sidebar {
+    width: 180px;
+    position: fixed;
+    top: 80px; /* Space from top */
+    height: 100vh; /* Full height */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
 
-    nav ul {
-        list-style: none;
-        padding: 10px;
-        width: 100%;
-    }
+nav ul {
+    list-style: none;
+    padding: 10px;
+    width: 100%;
+}
 
-    nav ul li {
-        
-        width: 100%;
-        margin: 35px 0; 
+nav ul li {
+    
+    width: 100%;
+    margin: 35px 0; 
 
-    }
+}
 
-    nav li:hover {
-        transform: scale(1.05); 
-        transition: transform 0.2s ease;
-        
-    }
+nav li:hover {
+    transform: scale(1.05); 
+    transition: transform 0.2s ease;
+    
+}
 
-    nav ul li a {
-        display: block;
-        text-decoration: none;
-        color: white;
-        font-weight: 700;
-        background: #0066FF;
-        padding: 15px;
-        text-align: right;
-        border-radius: 20px;
-        width: 100%;
-        border: 2px solid #000000;
-        margin-left: -80px;
-        
-        transition: background 0.2s ease; 
-    }
-    nav ul li a[href="admin.php"] {
-        font-size: 0.85em;
-        padding: 8px 15px;
-        line-height: 1.2;
-        white-space: normal;
-        word-break: break-word;
-    }
-    nav ul li a[href="tasker_request.php"] {
-        font-size: 0.85em;
-        padding: 8px 15px;
-        line-height: 1.2;
-        white-space: normal;
-        word-break: break-word;
-    }
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    background: #0066FF;
+    padding: 15px;
+    text-align: right;
+    border-radius: 20px;
+    width: 100%;
+    border: 2px solid #000000;
+    margin-left: -80px;
+    
+    transition: background 0.2s ease; 
+}
+nav ul li a[href="admin.php"] {
+    font-size: 0.85em;
+    padding: 8px 15px;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
+}
+nav ul li a[href="tasker_request.php"] {
+    font-size: 0.85em;
+    padding: 8px 15px;
+    line-height: 1.2;
+    white-space: normal;
+    word-break: break-word;
+}
 
 
 .content-box {

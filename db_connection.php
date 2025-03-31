@@ -1,7 +1,7 @@
 <?php
 $host = "127.0.0.1:3307"; // Use the correct port
 $user = "root";
-$pass = "ogatarizu";  // Change if necessary
+$pass = "";  // Change if necessary
 $dbname = "taskconnect";
 
 // Enable error reporting

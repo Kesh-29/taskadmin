@@ -6,8 +6,8 @@ if (!isset($_SESSION['admin_id'])) { // Check if user is NOT logged in
     exit();
 }
 
-// Fetch all users from the database
-$query = "SELECT users_id, first_name, last_name, username, mobile_no, email FROM users";
+// Fetch all users from the database including is_tasker status
+$query = "SELECT users_id, first_name, last_name, username, mobile_no, email, is_tasker FROM users";
 $result = $conn->query($query);
 ?>
 
@@ -20,6 +20,28 @@ $result = $conn->query($query);
     <title>Task Connect - Users</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
     <link rel="stylesheet" href="style/user.css">
+    <style>
+        /* Add this to your existing CSS */
+        .container {
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .tasker-status {
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .tasker-yes {
+            color: #28a745;
+            /* Green for Yes */
+        }
+
+        .tasker-no {
+            color: #dc3545;
+            /* Red for No */
+        }
+    </style>
 </head>
 
 <body>
@@ -31,11 +53,11 @@ $result = $conn->query($query);
             <nav>
                 <ul>
                     <li><a href="admindash.php">Dashboard</a></li>
-                    <li><a href="user.php">Tasker</a></li>
+                    <li><a href="user.php">Users</a></li>
                     <li><a href="tasker_request.php">Tasker<br>Request</a></li>
-                    <li><a href="history.php">Job Request</a></li>
-                    <li><a href="admin.php">User <br> Management</a></li>
-                    <li><a href="view.html">User Profile</a></li>
+                    <li><a href="history.php">Req History</a></li>
+                    <li><a href="admin.php">Admin <br> Management</a></li>
+                    <li><a href="admin_profile.php">User Profile</a></li>
                     <li><a href="logout.php">Logout</a></li>
                 </ul>
             </nav>
@@ -49,7 +71,7 @@ $result = $conn->query($query);
                 <span>Username</span>
                 <span>Number</span>
                 <span>Email</span>
-                <span>Action</span>
+                <span>Tasker</span>
             </div>
 
             <!-- Fetch and display users dynamically -->
@@ -61,15 +83,12 @@ $result = $conn->query($query);
                     <span><?= htmlspecialchars($row['username']) ?></span>
                     <span><?= htmlspecialchars($row['mobile_no']) ?></span>
                     <span><?= htmlspecialchars($row['email']) ?></span>
-                    <select class="dropdown">
-                        <option value="" disabled selected></option>
-                        <option value="accept">Accept</option>
-                        <option value="decline">Decline</option>
-                    </select>
+                    <span class="tasker-status <?= $row['is_tasker'] ? 'tasker-yes' : 'tasker-no' ?>">
+                        <?= $row['is_tasker'] ? 'Yes' : 'No' ?>
+                    </span>
                 </div>
             <?php endwhile; ?>
         </div>
-    </div>
     </div>
 </body>
 

@@ -117,17 +117,6 @@ body {
     box-sizing: border-box;
 }
 
-.profile-avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: #e0e5ff url('../elements/patrick_photo.png') no-repeat center / cover;
-    margin-right: 20px;
-    overflow: hidden;
-    
-    
-}
-
 .profile-info h1 {
     font-size: 20px; 
     margin-bottom: 10px;
